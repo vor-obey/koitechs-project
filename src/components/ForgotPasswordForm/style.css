@@ -1,0 +1,19 @@
+.forgotpassword-wrapper {
+    width: 400px;
+    padding: 10px;
+    margin: 0;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.forgotpassword-wrapper>a {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.forgotpassword-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
