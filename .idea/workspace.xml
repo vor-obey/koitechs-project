@@ -10,37 +10,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/koitechs-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrivateRouter.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPassworForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LoginForm/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Routing/Routing.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Routing/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/store/configureStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/store/rootReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/store/rootSaga.js" afterDir="false" />
+    <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Create Login and Forgot Password forms">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPasswordConfirmation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPasswordConfirmation/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ResetPassword/ResetPassword.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ResetPassword/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ResetPassword/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/user/userActionTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/user/userActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/user/userReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/user/userSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/koitechs-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/koitechs-project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateRouter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPassworForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPassworForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Routing/Routing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/Routing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/rootSaga.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -66,6 +56,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -74,6 +65,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
@@ -99,8 +91,16 @@
       <option name="presentableId" value="Default" />
       <updated>1614675991532</updated>
       <workItem from="1614675992718" duration="6286000" />
-      <workItem from="1614775542225" duration="8500000" />
+      <workItem from="1614775542225" duration="35211000" />
     </task>
+    <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
+      <created>1614787152943</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614787152943</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +118,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create Login and Forgot Password forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Login and Forgot Password forms" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="709" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614785284376">
       <screen x="0" y="0" width="1920" height="1044" />
@@ -131,17 +135,21 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="548" y="268" key="IDE.errors.dialog/0.0.1920.1044@0.0.1920.1044" timestamp="1614676612652" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1614778608667">
+    <state x="461" y="157" key="SettingsEditor" timestamp="1614857932365">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1614778608667" />
+    <state x="461" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1614857932365" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1614787158060">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1614787158060" />
     <state x="664" y="261" width="592" height="522" key="find.popup" timestamp="1614677122999">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="664" y="261" width="592" height="522" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1614677122999" />
-    <state x="624" y="238" key="run.anything.popup" timestamp="1614785370208">
+    <state x="624" y="238" key="run.anything.popup" timestamp="1614862566552">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="624" y="238" key="run.anything.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1614785370208" />
+    <state x="624" y="238" key="run.anything.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1614862566552" />
   </component>
 </project>
