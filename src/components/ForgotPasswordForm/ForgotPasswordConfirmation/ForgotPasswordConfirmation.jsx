@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import './style.css';
 import { useDispatch } from 'react-redux';
 import { clearConfirmStep } from '../../../data/store/user/userActions';
+import { LOGIN } from '../../../constants/routes';
 
 const ForgotPasswordConfirmation = ({ history }) => {
   const dispatch = useDispatch();
 
   const handleClick = useCallback((e) => {
     e.preventDefault();
-    history.push('/');
+    history.push(LOGIN);
   }, [history]);
 
   useEffect(() => {

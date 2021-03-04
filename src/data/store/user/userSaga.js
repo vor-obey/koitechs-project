@@ -8,6 +8,7 @@ import {
   RESET_USER_PASSWORD_REQUEST, RESET_USER_PASSWORD_SUCCESS
 } from './userActionTypes';
 import { put } from '@redux-saga/core/effects';
+import { LOGIN } from '../../../constants/routes';
 
 const userService = async (data) => {
   return Promise.resolve({ accessToken: 'accessToken', refreshToken: 'refreshToken' });
@@ -58,7 +59,7 @@ export function * resetUserPassword (action) {
     const response = yield resetPassword(action.payload);
     if (response) {
       yield put({ type: RESET_USER_PASSWORD_SUCCESS });
-      history.push('/');
+      history.push(LOGIN);
     } else {
       yield put({ type: RESET_USER_PASSWORD_ERROR });
     }

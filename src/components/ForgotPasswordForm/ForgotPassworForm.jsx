@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { forgotPassword } from '../../data/store/user/userActions';
+import { LOGIN } from '../../constants/routes';
 
 const ForgotPasswordForm = ({ history }) => {
   const [email, setEmail] = useState();
@@ -13,7 +14,7 @@ const ForgotPasswordForm = ({ history }) => {
 
   const handleClick = useCallback((e) => {
     e.preventDefault();
-    history.push('/');
+    history.push(LOGIN);
   }, [history]);
 
   const onInputChangedHandler = useCallback((event) => {
