@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
 
-const Footer = () => {
+const AuthFooter = () => {
   return (
     <div className='footer-container'>FOOTER</div>
   );
 };
 
-export default Footer;
+export default AuthFooter;

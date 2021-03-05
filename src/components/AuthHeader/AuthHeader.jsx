@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const Header = () => {
+const AuthHeader = () => {
   return (
     <div className='headerWrapper'>
       CITRONEER
@@ -9,4 +9,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AuthHeader;
