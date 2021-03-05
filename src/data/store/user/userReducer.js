@@ -5,7 +5,13 @@ import {
   FORGOT_PASSWORD_SUCCESS,
   LOGIN_USER_ERROR,
   LOGIN_USER_REQUEST,
-  LOGIN_USER_SUCCESS, RESET_USER_PASSWORD_ERROR, RESET_USER_PASSWORD_REQUEST, RESET_USER_PASSWORD_SUCCESS
+  LOGIN_USER_SUCCESS,
+  RESET_USER_PASSWORD_ERROR,
+  RESET_USER_PASSWORD_REQUEST,
+  RESET_USER_PASSWORD_SUCCESS,
+  SIGN_UP_USER_ERROR,
+  SIGN_UP_USER_REQUEST,
+  SIGN_UP_USER_SUCCESS
 } from './userActionTypes';
 
 const initialState = {
@@ -76,6 +82,26 @@ export const userReducer = (state = initialState, action) => {
       };
 
     case RESET_USER_PASSWORD_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true
+      };
+
+    case SIGN_UP_USER_REQUEST:
+      return {
+        ...state,
+        isLoading: true
+      };
+
+    case SIGN_UP_USER_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        token: action.payload.accessToken
+      };
+
+    case SIGN_UP_USER_ERROR:
       return {
         ...state,
         isLoading: false,

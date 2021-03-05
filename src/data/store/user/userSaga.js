@@ -4,13 +4,19 @@ import {
   FORGOT_PASSWORD_SUCCESS,
   LOGIN_USER_ERROR,
   LOGIN_USER_REQUEST,
-  LOGIN_USER_SUCCESS, RESET_USER_PASSWORD_ERROR,
-  RESET_USER_PASSWORD_REQUEST, RESET_USER_PASSWORD_SUCCESS
+  LOGIN_USER_SUCCESS,
+  RESET_USER_PASSWORD_ERROR,
+  RESET_USER_PASSWORD_REQUEST,
+  RESET_USER_PASSWORD_SUCCESS,
+  SIGN_UP_USER_ERROR,
+  SIGN_UP_USER_REQUEST,
+  SIGN_UP_USER_SUCCESS
 } from './userActionTypes';
 import { put } from '@redux-saga/core/effects';
 import { LOGIN } from '../../../constants/routes';
 
 const userService = async (data) => {
+  console.log({ data });
   return Promise.resolve({ accessToken: 'accessToken', refreshToken: 'refreshToken' });
 };
 
@@ -65,5 +71,21 @@ export function * resetUserPassword (action) {
     }
   } catch (e) {
     yield put({ type: RESET_USER_PASSWORD_ERROR });
+  }
+}
+
+export function * signUp (action) {
+  try {
+    yield put({ type: SIGN_UP_USER_REQUEST });
+    const response = yield userService(action.payload);
+    if (response) {
+      yield put({ type: SIGN_UP_USER_SUCCESS, payload: response });
+      localStorage.setItem('accessToken', response.accessToken);
+      localStorage.setItem('refreshToken', response.refreshToken);
+    } else {
+      yield put({ type: SIGN_UP_USER_ERROR });
+    }
+  } catch (e) {
+    yield put({ type: SIGN_UP_USER_ERROR });
   }
 }

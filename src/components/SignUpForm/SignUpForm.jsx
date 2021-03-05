@@ -1,7 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import './style.css';
+import { useDispatch } from 'react-redux';
+import { signUp } from '../../data/store/user/userActions';
 
 const SignUpForm = () => {
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState('password');
   const [signUpForm, setSignUpForm] = useState({
     role: 'advisor',
@@ -26,6 +29,22 @@ const SignUpForm = () => {
       setShowPassword('password');
     }
   }, []);
+
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+
+    dispatch(signUp(signUpForm));
+
+    setSignUpForm({
+      role: 'advisor',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      password: '',
+      confirmPassword: ''
+    });
+  }, [dispatch, signUpForm]);
 
   return (
     <form action="" method='post' className='sign-up-container'>
@@ -74,6 +93,8 @@ const SignUpForm = () => {
         <label htmlFor="agreement">I have read, understood and agree to the above terms and conditions</label>
         <input type="checkbox" name='agreement' id='agreement'/>
       </div>
+
+      <button type='submit' onClick={onSubmit}>Register</button>
 
     </form>
   );

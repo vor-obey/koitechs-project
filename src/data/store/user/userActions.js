@@ -1,4 +1,10 @@
-import { FORGOT_PASSWORD, LOGIN_USER, CLEAR_CONFIRM_STEP, RESET_USER_PASSWORD } from './userActionTypes';
+import {
+  FORGOT_PASSWORD,
+  LOGIN_USER,
+  CLEAR_CONFIRM_STEP,
+  RESET_USER_PASSWORD,
+  SIGN_UP_USER
+} from './userActionTypes';
 
 export const login = (loginData) => ({
   type: LOGIN_USER,
@@ -10,9 +16,16 @@ export const forgotPassword = (email) => ({
   payload: email
 });
 
-export const clearConfirmStep = () => ({ type: CLEAR_CONFIRM_STEP });
+export const clearConfirmStep = () => ({
+  type: CLEAR_CONFIRM_STEP
+});
 
 export const resetUserPassword = (data) => ({
   type: RESET_USER_PASSWORD,
   payload: data
+});
+
+export const signUp = (userData) => ({
+  type: SIGN_UP_USER,
+  payload: userData
 });
