@@ -2,8 +2,8 @@ import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { forgotPassword } from '../../data/store/user/userActions';
-import { LOGIN } from '../../constants/routes';
+import { forgotPassword } from '../../../data/store/user/userActions';
+import { LOGIN } from '../../../constants/routes';
 
 const ForgotPasswordForm = ({ history }) => {
   const [email, setEmail] = useState();

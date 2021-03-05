@@ -1,9 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import './style.css';
 import { useDispatch } from 'react-redux';
-import { signUp } from '../../data/store/user/userActions';
+import PropTypes from 'prop-types';
 
-const SignUpForm = () => {
+import { signUp } from '../../data/store/user/userActions';
+import './style.css';
+
+const SignUpForm = ({ history }) => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState('password');
   const [signUpForm, setSignUpForm] = useState({
@@ -33,7 +35,7 @@ const SignUpForm = () => {
   const onSubmit = useCallback((e) => {
     e.preventDefault();
 
-    dispatch(signUp(signUpForm));
+    dispatch(signUp({ signUpForm, history }));
 
     setSignUpForm({
       role: 'advisor',
@@ -101,3 +103,7 @@ const SignUpForm = () => {
 };
 
 export default SignUpForm;
+
+SignUpForm.propTypes = {
+  history: PropTypes.object
+};

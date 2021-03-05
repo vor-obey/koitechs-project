@@ -13,7 +13,7 @@ import {
   SIGN_UP_USER_SUCCESS
 } from './userActionTypes';
 import { put } from '@redux-saga/core/effects';
-import { LOGIN } from '../../../constants/routes';
+import { CLIENTS, LOGIN } from '../../../constants/routes';
 
 const userService = async (data) => {
   console.log({ data });
@@ -76,12 +76,14 @@ export function * resetUserPassword (action) {
 
 export function * signUp (action) {
   try {
+    const { history, signUpForm } = action.payload;
     yield put({ type: SIGN_UP_USER_REQUEST });
-    const response = yield userService(action.payload);
+    const response = yield userService(signUpForm);
     if (response) {
       yield put({ type: SIGN_UP_USER_SUCCESS, payload: response });
       localStorage.setItem('accessToken', response.accessToken);
       localStorage.setItem('refreshToken', response.refreshToken);
+      history.push(CLIENTS);
     } else {
       yield put({ type: SIGN_UP_USER_ERROR });
     }
