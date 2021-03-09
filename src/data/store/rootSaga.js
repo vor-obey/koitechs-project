@@ -8,6 +8,8 @@ import {
   LOG_OUT
 } from './user/userActionTypes';
 import * as userSaga from './user/userSaga';
+import * as clientSaga from './clients/clientSaga';
+import { CREATE_CLIENT_ACCOUNT, GET_USERS } from './clients/clientActionsTypes';
 
 export function * rootSaga () {
   yield takeEvery(LOGIN_USER, userSaga.login);
@@ -16,4 +18,7 @@ export function * rootSaga () {
   yield takeEvery(SIGN_UP_USER, userSaga.signUp);
   yield takeEvery(GET_USER, userSaga.getUser);
   yield takeEvery(LOG_OUT, userSaga.logOut);
+
+  yield takeEvery(GET_USERS, clientSaga.getUsers);
+  yield takeEvery(CREATE_CLIENT_ACCOUNT, clientSaga.createClientAccount);
 }

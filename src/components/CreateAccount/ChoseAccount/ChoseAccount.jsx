@@ -1,20 +1,17 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
 
-const ChoseAccount = ({ setNextStep }) => {
-  const [account, setAccount] = useState('');
-
+const ChoseAccount = ({ setNextStep, setClientData, clientData }) => {
   const onHandleChange = useCallback((e) => {
-    setAccount(e.target.value);
-  }, []);
+    setClientData({ ...clientData, account: e.target.value });
+  }, [clientData]);
 
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    alert(account);
     setNextStep(true);
-  }, [account]);
+  }, []);
 
   return (
     <form className='create-account-container' onSubmit={onSubmit}>
@@ -40,5 +37,7 @@ const ChoseAccount = ({ setNextStep }) => {
 export default ChoseAccount;
 
 ChoseAccount.propTypes = {
-  setNextStep: PropTypes.func
+  setNextStep: PropTypes.func,
+  setClientData: PropTypes.func,
+  clientData: PropTypes.object
 };

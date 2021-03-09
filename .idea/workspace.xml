@@ -11,32 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/ChoseAccount.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/ChoseName.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/CreateAccount.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientActionsTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mocks/usersMock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ClientService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/ChoseAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/ChoseAccount.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/ChoseName.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/ChoseName.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/CreateAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/CreateAccount.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/clients/clientActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/clients/clientActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/clients/clientActionsTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/clients/clientActionsTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/clients/clientReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/clients/clientReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/rootSaga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Clients/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +75,21 @@
       <recent name="$PROJECT_DIR$/src/pages/Information" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -103,7 +104,7 @@
       <workItem from="1615230012602" duration="2029000" />
       <workItem from="1615233344728" duration="117000" />
       <workItem from="1615233485630" duration="24634000" />
-      <workItem from="1615296198047" duration="1641000" />
+      <workItem from="1615296198047" duration="7427000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -154,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615281155144</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add CreateAccount pages, logOut , refactor pages">
+      <created>1615298163500</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615298163500</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +188,8 @@
     <MESSAGE value="Create signUp action, saga" />
     <MESSAGE value="Create Clients, Information, Support pages. Add navbar and main footer" />
     <MESSAGE value="Refactor logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor logic" />
+    <MESSAGE value="Add CreateAccount pages, logOut , refactor pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CreateAccount pages, logOut , refactor pages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -207,10 +216,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615297094725" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615281157223">
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615298167598">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615281157223" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615298167598" />
     <state x="664" y="261" width="592" height="522" key="find.popup" timestamp="1614677122999">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>

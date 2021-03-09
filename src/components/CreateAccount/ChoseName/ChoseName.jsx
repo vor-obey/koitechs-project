@@ -1,22 +1,25 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 
 import './style.css';
 import { CLIENTS } from '../../../constants/routes';
 import { useHistory } from 'react-router';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { createClient } from '../../../data/store/clients/clientActions';
 
-const ChoseName = () => {
-  const [name, setName] = useState('');
+const ChoseName = ({ setClientData, clientData }) => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const onChangeName = useCallback((e) => {
-    setName(e.target.value);
-  }, [name]);
+    setClientData({ ...clientData, name: e.target.value });
+  }, [clientData]);
 
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    alert(name);
+    dispatch(createClient(clientData));
     history.push(CLIENTS);
-  }, [name]);
+  }, [dispatch, clientData]);
 
   return (
     <form className='chose-name-container' onSubmit={onSubmit}>
@@ -25,7 +28,7 @@ const ChoseName = () => {
       <div className='enter-name'>
         <h2>Name*</h2>
         <label htmlFor="name">Name</label>
-        <input type="text" name='name' value={name} placeholder='name' onChange={onChangeName}/>
+        <input type="text" name='name' value={clientData.name} placeholder='name' onChange={onChangeName}/>
         <button type='submit'>Register</button>
       </div>
     </form>
@@ -33,3 +36,8 @@ const ChoseName = () => {
 };
 
 export default ChoseName;
+
+ChoseName.propTypes = {
+  setClientData: PropTypes.func,
+  clientData: PropTypes.object
+};
