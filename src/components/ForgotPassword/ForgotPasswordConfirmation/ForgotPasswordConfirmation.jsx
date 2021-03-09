@@ -4,6 +4,7 @@ import './style.css';
 import { useDispatch } from 'react-redux';
 import { clearConfirmStep } from '../../../data/store/user/userActions';
 import { LOGIN } from '../../../constants/routes';
+import BackToSignUp from '../../BackToSignUp';
 
 const ForgotPasswordConfirmation = ({ history }) => {
   const dispatch = useDispatch();
@@ -18,18 +19,21 @@ const ForgotPasswordConfirmation = ({ history }) => {
   });
 
   return (
-    <div className='fgps'>
-      <p>Text</p>
-      <p>Text</p>
-      <p>Text</p>
-      <p>Text</p>
-      <p>Text</p>
-      <p>Text</p>
-      <p>Text</p>
-      <p>Text</p>
-      <p>Text</p>
-      <a onClick={handleClick}>Back to the login</a>
-    </div>
+    <>
+      <div className='fgps'>
+        <p>Text</p>
+        <p>Text</p>
+        <p>Text</p>
+        <p>Text</p>
+        <p>Text</p>
+        <p>Text</p>
+        <p>Text</p>
+        <p>Text</p>
+        <p>Text</p>
+        <a onClick={handleClick}>Back to the login</a>
+      </div>
+      <BackToSignUp />
+    </>
   );
 };
 

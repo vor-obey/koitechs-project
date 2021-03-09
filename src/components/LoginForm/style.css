@@ -6,6 +6,11 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.sign-in-container a {
+    color: dodgerblue;
+}
+
 .input-container {
     display: flex;
     flex-direction: column;

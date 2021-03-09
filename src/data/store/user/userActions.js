@@ -3,7 +3,7 @@ import {
   LOGIN_USER,
   CLEAR_CONFIRM_STEP,
   RESET_USER_PASSWORD,
-  SIGN_UP_USER
+  SIGN_UP_USER, GET_USER, LOG_OUT
 } from './userActionTypes';
 
 export const login = (loginData) => ({
@@ -28,4 +28,12 @@ export const resetUserPassword = (data) => ({
 export const signUp = (userData) => ({
   type: SIGN_UP_USER,
   payload: userData
+});
+
+export const getUser = () => ({
+  type: GET_USER
+});
+
+export const logOut = () => ({
+  type: LOG_OUT
 });

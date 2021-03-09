@@ -2,7 +2,9 @@ import {
   CLEAR_CONFIRM_STEP,
   FORGOT_PASSWORD_ERROR,
   FORGOT_PASSWORD_REQUEST,
-  FORGOT_PASSWORD_SUCCESS,
+  FORGOT_PASSWORD_SUCCESS, GET_USER_ERROR,
+  GET_USER_REQUEST,
+  GET_USER_SUCCESS, LOG_OUT,
   LOGIN_USER_ERROR,
   LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,
@@ -13,12 +15,17 @@ import {
   SIGN_UP_USER_REQUEST,
   SIGN_UP_USER_SUCCESS
 } from './userActionTypes';
+import { PENDING } from '../../../constants/authStatus';
 
 const initialState = {
   token: '',
+  user: null,
   isLoading: false,
   isError: false,
-  confirmStep: false
+  confirmStep: false,
+  auth: {
+    status: ''
+  }
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -98,7 +105,9 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        token: action.payload.accessToken
+        auth: {
+          status: PENDING
+        }
       };
 
     case SIGN_UP_USER_ERROR:
@@ -106,6 +115,35 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: true
+      };
+
+    case GET_USER_REQUEST:
+      return {
+        ...state,
+        isLoading: true
+      };
+
+    case GET_USER_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        user: action.payload
+      };
+
+    case GET_USER_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true
+      };
+
+    case LOG_OUT:
+      return {
+        token: '',
+        user: null,
+        isLoading: false,
+        isError: false,
+        confirmStep: false
       };
 
     default: {

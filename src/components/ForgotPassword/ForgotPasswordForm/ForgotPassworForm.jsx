@@ -1,12 +1,14 @@
 import React, { useCallback, useState } from 'react';
-import PropTypes from 'prop-types';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { forgotPassword } from '../../../data/store/user/userActions';
 import { LOGIN } from '../../../constants/routes';
+import BackToSignUp from '../../BackToSignUp';
+import { useHistory } from 'react-router';
 
-const ForgotPasswordForm = ({ history }) => {
+const ForgotPasswordForm = () => {
   const [email, setEmail] = useState();
+  const history = useHistory();
   const dispatch = useDispatch();
   const loading = useSelector(state => state.userReducer.isLoading);
 
@@ -31,22 +33,21 @@ const ForgotPasswordForm = ({ history }) => {
   }, [dispatch]);
 
   return (
-    <form className='forgotpassword-wrapper'>
-      <p>Forgot password?</p>
-      <div className='forgotpassword-container'>
-        <label htmlFor='email'>Email</label>
-        <input type="email" placeholder='email' onChange={onInputChangedHandler}/>
-      </div>
+    <>
+      <form className='forgotpassword-wrapper'>
+        <p>Forgot password?</p>
+        <div className='forgotpassword-container'>
+          <label htmlFor='email'>Email</label>
+          <input type="email" placeholder='email' onChange={onInputChangedHandler}/>
+        </div>
 
-      <input type="submit" value={renderButtonText} onClick={onSubmitHandler} />
+        <input type="submit" value={renderButtonText} onClick={onSubmitHandler} />
 
-      <a onClick={handleClick}>Back to the login</a>
-    </form>
+        <a onClick={handleClick}>Back to the login</a>
+      </form>
+      <BackToSignUp />
+     </>
   );
 };
 
 export default ForgotPasswordForm;
-
-ForgotPasswordForm.propTypes = {
-  history: PropTypes.object
-};

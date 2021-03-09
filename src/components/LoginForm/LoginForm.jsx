@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 
 import { login } from '../../data/store/user/userActions';
 import './style.css';
+import { NavLink as Nav, useHistory } from 'react-router-dom';
+import { FORGOT_PASSWORD, SIGN_UP } from '../../constants/routes';
 
-const LoginForm = ({ history }) => {
+const LoginForm = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [form, setForm] = useState({ email: '', password: '' });
   const loading = useSelector(state => state.userReducer.isLoading);
@@ -14,12 +17,16 @@ const LoginForm = ({ history }) => {
 
   const handleClick = useCallback((e) => {
     e.preventDefault();
-    history.push('/forgot-password');
+    history.push(FORGOT_PASSWORD);
   }, [history]);
 
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    dispatch(login(form));
+    dispatch(login({
+      form,
+      history
+    }));
+
     setForm({ email: '', password: '' });
   }, []);
 
@@ -48,6 +55,14 @@ const LoginForm = ({ history }) => {
       </div>
 
       <input type="submit" value={renderButtonText} className='submit-button' onClick={onSubmit} />
+      <div>
+        <p>
+          Never give out your login credentials and never
+          log in at the request of someone who contacts you.
+        </p>
+        <p>Do you not have an account?</p>
+        <Nav to={SIGN_UP}>Create an account</Nav>
+      </div>
     </form>
   );
 };
