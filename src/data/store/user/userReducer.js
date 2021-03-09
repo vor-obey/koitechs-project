@@ -2,9 +2,11 @@ import {
   CLEAR_CONFIRM_STEP,
   FORGOT_PASSWORD_ERROR,
   FORGOT_PASSWORD_REQUEST,
-  FORGOT_PASSWORD_SUCCESS, GET_USER_ERROR,
+  FORGOT_PASSWORD_SUCCESS,
+  GET_USER_ERROR,
   GET_USER_REQUEST,
-  GET_USER_SUCCESS, LOG_OUT,
+  GET_USER_SUCCESS,
+  LOG_OUT,
   LOGIN_USER_ERROR,
   LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,
@@ -12,10 +14,11 @@ import {
   RESET_USER_PASSWORD_REQUEST,
   RESET_USER_PASSWORD_SUCCESS,
   SIGN_UP_USER_ERROR,
+  SIGN_UP_USER_PENDING,
   SIGN_UP_USER_REQUEST,
   SIGN_UP_USER_SUCCESS
 } from './userActionTypes';
-import { PENDING } from '../../../constants/authStatus';
+import { PENDING, SUCCESS } from '../../../constants/authStatus';
 
 const initialState = {
   token: '',
@@ -101,12 +104,21 @@ export const userReducer = (state = initialState, action) => {
         isLoading: true
       };
 
-    case SIGN_UP_USER_SUCCESS:
+    case SIGN_UP_USER_PENDING:
       return {
         ...state,
         isLoading: false,
         auth: {
           status: PENDING
+        }
+      };
+
+    case SIGN_UP_USER_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        auth: {
+          status: SUCCESS
         }
       };
 

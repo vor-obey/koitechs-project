@@ -9,8 +9,9 @@ import {
   RESET_USER_PASSWORD_REQUEST,
   RESET_USER_PASSWORD_SUCCESS,
   SIGN_UP_USER_ERROR,
-  SIGN_UP_USER_REQUEST,
-  SIGN_UP_USER_SUCCESS
+  SIGN_UP_USER_PENDING,
+  SIGN_UP_USER_REQUEST
+  // SIGN_UP_USER_SUCCESS
 } from './userActionTypes';
 import { put } from '@redux-saga/core/effects';
 import { CLIENTS, LOGIN } from '../../../constants/routes';
@@ -88,7 +89,7 @@ export function * signUp (action) {
     const response = yield userService(signUpForm);
 
     if (response) {
-      yield put({ type: SIGN_UP_USER_SUCCESS });
+      yield put({ type: SIGN_UP_USER_PENDING });
       StorageService.setItem('acc', response.accessToken);
       StorageService.setItem('rfr', response.refreshToken);
     } else {

@@ -6,3 +6,5 @@ export const RESET_PASSWORD = '/reset-password/token';
 export const CLIENTS = '/clients';
 export const INFORMATION = '/information';
 export const SUPPORT = '/support';
+
+export const CREATE_ACCOUNT = '/clients/create-account';

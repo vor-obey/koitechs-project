@@ -1,0 +1,17 @@
+.chose-name-container {
+    width: 400px;
+}
+
+.enter-name {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.enter-name input {
+    margin-bottom: 20px;
+    margin-top: 3px;
+    padding: 5px;
+    font-size: 18px;
+}

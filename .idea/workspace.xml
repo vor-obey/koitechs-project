@@ -10,43 +10,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Create sign up form">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BackToSignUp/BackToSignUp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BackToSignUp/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BackToSignUp/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/SignUpConfirmSuccess.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/authStatus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/StorageService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+    <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/ChoseAccount.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/ChoseName.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChoseName/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/CreateAccount.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateAccount/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientActionsTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mocks/usersMock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/ForgotPassworForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/ForgotPassworForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Routing/AuthRoutin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/AuthRoutin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Routing/Routing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/Routing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUpForm/SignUpForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUpForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUpForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/rootSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userActionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userActionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/store/user/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/store/user/userSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Clients/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +78,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components/SignUp/SignUpForm" />
       <recent name="$PROJECT_DIR$/src/components/SignUpForm" />
       <recent name="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm" />
@@ -96,21 +88,6 @@
       <recent name="$PROJECT_DIR$/src/pages/Support" />
       <recent name="$PROJECT_DIR$/src/pages/Information" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -125,7 +102,8 @@
       <workItem from="1615224951245" duration="4503000" />
       <workItem from="1615230012602" duration="2029000" />
       <workItem from="1615233344728" duration="117000" />
-      <workItem from="1615233485630" duration="13672000" />
+      <workItem from="1615233485630" duration="24634000" />
+      <workItem from="1615296198047" duration="1641000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -169,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614953744543</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactor logic">
+      <created>1615281155143</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615281155144</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +179,8 @@
     <MESSAGE value="Rename Header and Footer in AuthHeader &amp; AuthFooter" />
     <MESSAGE value="Create signUp action, saga" />
     <MESSAGE value="Create Clients, Information, Support pages. Add navbar and main footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Clients, Information, Support pages. Add navbar and main footer" />
+    <MESSAGE value="Refactor logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor logic" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -217,14 +203,14 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="548" y="268" key="IDE.errors.dialog/0.0.1920.1044@0.0.1920.1044" timestamp="1614676612652" />
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615273196285">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615297094725">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615273196285" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1614933027312">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615297094725" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615281157223">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1614933027312" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615281157223" />
     <state x="664" y="261" width="592" height="522" key="find.popup" timestamp="1614677122999">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>

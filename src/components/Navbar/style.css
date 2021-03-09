@@ -1,17 +1,22 @@
 .navbar {
-    height: 60px;
+    height: fit-content;
     background-color: grey;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .navbar-links {
+    width: 70%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 0 10px;
+    justify-content: space-between;
+    padding: 0;
 }
 
 .navbar-links>li {
@@ -26,4 +31,15 @@ a {
     list-style: none;
     text-decoration: none;
     color: black;
+}
+
+.user-info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    align-items: center;
+}
+
+.user-info-container button {
+    height: fit-content;
 }

@@ -123,6 +123,12 @@ const SignUpForm = ({ history }) => {
           placeholder="Confirm password"
           onChange={onChangeHandler}
         />
+        <ul>
+          <li>At least 8 characters</li>
+          <li>At least one lower case character</li>
+          <li>At least one capital letter</li>
+          <li>At least one special character ~@#$%^& </li>
+        </ul>
       </div>
 
       <input
