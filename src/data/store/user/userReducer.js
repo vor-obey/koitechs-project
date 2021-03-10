@@ -1,11 +1,14 @@
 import {
   CLEAR_CONFIRM_STEP,
+  CONFIRM_AUTH_ERROR,
+  CONFIRM_AUTH_REQUEST,
+  CONFIRM_AUTH_SUCCESS,
   FORGOT_PASSWORD_ERROR,
   FORGOT_PASSWORD_REQUEST,
   FORGOT_PASSWORD_SUCCESS,
   GET_USER_ERROR,
   GET_USER_REQUEST,
-  GET_USER_SUCCESS,
+  GET_USER_SUCCESS, IS_AUTH,
   LOG_OUT,
   LOGIN_USER_ERROR,
   LOGIN_USER_REQUEST,
@@ -42,8 +45,10 @@ export const userReducer = (state = initialState, action) => {
     case LOGIN_USER_SUCCESS:
       return {
         ...state,
-        token: action.payload.accessToken,
-        isLoading: false
+        isAuthorized: true,
+        isLoading: false,
+        user: action.payload,
+        isAuth: true
       };
 
     case LOGIN_USER_ERROR:
@@ -129,6 +134,27 @@ export const userReducer = (state = initialState, action) => {
         isError: true
       };
 
+    case CONFIRM_AUTH_REQUEST:
+      return {
+        ...state,
+        isLoading: true
+      };
+
+    case CONFIRM_AUTH_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        auth: {
+          status: SUCCESS
+        }
+      };
+
+    case CONFIRM_AUTH_ERROR:
+      return {
+        ...state,
+        isError: true
+      };
+
     case GET_USER_REQUEST:
       return {
         ...state,
@@ -149,13 +175,24 @@ export const userReducer = (state = initialState, action) => {
         isError: true
       };
 
+    case IS_AUTH:
+      return {
+        ...state,
+        auth: {
+          status: ''
+        }
+      };
+
     case LOG_OUT:
       return {
         token: '',
         user: null,
         isLoading: false,
         isError: false,
-        confirmStep: false
+        confirmStep: false,
+        auth: {
+          status: ''
+        }
       };
 
     default: {

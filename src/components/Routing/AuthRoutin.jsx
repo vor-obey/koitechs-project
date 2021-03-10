@@ -12,7 +12,7 @@ import SignUp from '../SignUp';
 
 const AuthRouting = () => {
   return (
-    <>
+    <div className='root'>
       <AuthHeader/>
         <Switch>
           <PrivateRoute exact path={LOGIN} component={LoginForm}/>
@@ -23,7 +23,7 @@ const AuthRouting = () => {
           <Redirect to={LOGIN}/>
         </Switch>
       <AuthFooter />
-  </>
+  </div>
   );
 };
 

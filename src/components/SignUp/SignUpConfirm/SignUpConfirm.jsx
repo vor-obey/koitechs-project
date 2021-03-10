@@ -4,7 +4,7 @@ import { NavLink as Nav } from 'react-router-dom';
 import { SIGN_UP } from '../../../constants/routes';
 import './style.css';
 import { useDispatch } from 'react-redux';
-import { SIGN_UP_USER_SUCCESS } from '../../../data/store/user/userActionTypes';
+import { confirmAuth } from '../../../data/store/user/userActions';
 
 const SignUpConfirm = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const SignUpConfirm = () => {
   }, []);
 
   const confirmRegistration = () => {
-    dispatch({ type: SIGN_UP_USER_SUCCESS });
+    dispatch(confirmAuth());
   };
 
   return (

@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { signUp } from '../../../data/store/user/userActions';
-import './style.css';
+import './style.scss';
+import { NavLink } from 'react-router-dom';
+import MainButton from '../../MainButton';
 
 const SignUpForm = ({ history }) => {
   const dispatch = useDispatch();
@@ -36,7 +38,7 @@ const SignUpForm = ({ history }) => {
     (e) => {
       e.preventDefault();
 
-      dispatch(signUp({ signUpForm, history }));
+      dispatch(signUp(signUpForm));
 
       setSignUpForm({
         role: 'advisor',
@@ -52,18 +54,24 @@ const SignUpForm = ({ history }) => {
   );
 
   return (
-    <form action="" method="post" className="sign-up-container">
+    <form action="" method="post" className="sign-up-container" onSubmit={onSubmit}>
       <div>
-        <h2>Role*</h2>
-        <label htmlFor="role">Client</label>
-        <input type="radio" name="role" id="client" disabled />
+        <h4>Role*</h4>
+        <div className='radio-input-block'>
+          <div>
+            <input type="radio" name="role" id="client" disabled />
+            <label htmlFor="role">Client</label>
+          </div>
 
-        <label htmlFor="role">Advisor</label>
-        <input type="radio" name="role" id="advisor" checked />
+          <div>
+            <input type="radio" name="role" id="advisor" checked />
+            <label htmlFor="role">Advisor</label>
+          </div>
+        </div>
       </div>
 
       <div className="sign-up-wrapper">
-        <h2>Name</h2>
+        <h4>Name</h4>
         <label htmlFor="firstName">First Name</label>
         <input
           type="text"
@@ -84,7 +92,7 @@ const SignUpForm = ({ history }) => {
       </div>
 
       <div className="sign-up-wrapper">
-        <h2>Contact Information</h2>
+        <h4>Contact Information</h4>
         <label htmlFor="email">Email address</label>
         <input
           type="text"
@@ -105,7 +113,7 @@ const SignUpForm = ({ history }) => {
       </div>
 
       <div className="sign-up-wrapper">
-        <h2>Contact Information</h2>
+        <h4>Contact Information</h4>
         <label htmlFor="password">Password</label>
         <input
           type={showPassword}
@@ -131,26 +139,29 @@ const SignUpForm = ({ history }) => {
         </ul>
       </div>
 
-      <input
-        type="checkbox"
-        id="showPassword"
-        name="showPassword"
-        onChange={checkboxHandler}
-      />
-      <label htmlFor="showPassword">Show password</label>
-
-      <div>
-        <h2>Terms and conditions agreement</h2>
-
-        <label htmlFor="agreement">
-          I have read, understood and agree to the above terms and conditions
-        </label>
-        <input type="checkbox" name="agreement" id="agreement" />
+      <div className='checkbox-show-password-block'>
+        <input
+          type="checkbox"
+          id="showPassword"
+          name="showPassword"
+          onChange={checkboxHandler}
+        />
+          <label htmlFor="showPassword">Show password</label>
       </div>
 
-      <button type="submit" onClick={onSubmit}>
-        Register
-      </button>
+      <div>
+        <h4>Terms and conditions agreement</h4>
+
+        <NavLink to='#'>User term and conditions</NavLink>
+
+        <div className='agreement-block'>
+          <input type="checkbox" name="agreement" id="agreement" />
+          <label htmlFor="agreement">
+            I have read, understood and agree to the above terms and conditions
+          </label>
+        </div>
+      </div>
+      <MainButton type='submit'>Register</MainButton>
     </form>
   );
 };

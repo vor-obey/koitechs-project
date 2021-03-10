@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import ChoseAccount from './ChoseAccount';
-import ChoseName from './ChoseName';
+
+import ChoseAccount from './ChooseAccount';
+import ChoseName from './ChooseName';
 
 const CreateAccount = () => {
   const [nextStep, setNextStep] = useState(false);

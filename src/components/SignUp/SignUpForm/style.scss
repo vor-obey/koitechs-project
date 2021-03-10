@@ -1,0 +1,57 @@
+.sign-up-container {
+    width: 500px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 3px;
+
+    h4 {
+        margin: 5px 0;
+    }
+    .radio-input-block {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 20px;
+    }
+    a {
+        color: dodgerblue;
+        display: block;
+        text-decoration: underline;
+        margin-bottom: 5px;
+    }
+    ul {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .agreement-block {
+        display: flex;
+        align-items: center;
+        input {
+            margin-right: 10px;
+        }
+    }
+}
+
+.sign-up-wrapper{
+    display: flex;
+    flex-direction: column;
+    label {
+         font-size: 14px;
+         margin-bottom: 5px;
+    }
+    input {
+        outline-color: dodgerblue;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+}
+
+.checkbox-show-password-block {
+    display: flex;
+    align-items: center;
+    input {
+        margin-right: 10px;
+    }
+}

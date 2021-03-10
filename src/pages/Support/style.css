@@ -1,0 +1,19 @@
+.support-container ul li {
+    list-style: none;
+    padding: 0;
+}
+
+.support-container ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+}
+.support-container ul div {
+    margin-right: 50px;
+}
+
+.support-container {
+    height: 100%;
+    width: 100%;
+}

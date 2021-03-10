@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './style.css';
 import AuthRouting from './AuthRoutin';
 import MainRouting from './MainRouting';
-import { useSelector } from 'react-redux';
 import StorageService from '../../services/StorageService';
+import { useSelector } from 'react-redux';
 
 const Routing = () => {
   const [isAuthenticated, setAuthenticated] = useState(StorageService.getJWTToken('acc'));
@@ -22,11 +22,9 @@ const Routing = () => {
   }, [user]);
 
   return (
-    <div className='root'>
       <BrowserRouter >
-        {isAuthenticated ? <MainRouting /> : <AuthRouting />}
+          {isAuthenticated ? <MainRouting /> : <AuthRouting />}
       </BrowserRouter>
-    </div>
   );
 };
 

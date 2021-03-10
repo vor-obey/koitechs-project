@@ -3,12 +3,19 @@ import {
   LOGIN_USER,
   CLEAR_CONFIRM_STEP,
   RESET_USER_PASSWORD,
-  SIGN_UP_USER, GET_USER, LOG_OUT
+  SIGN_UP_USER,
+  GET_USER,
+  LOG_OUT,
+  CONFIRM_AUTH, IS_AUTH
 } from './userActionTypes';
 
 export const login = (loginData) => ({
   type: LOGIN_USER,
   payload: loginData
+});
+
+export const isAuth = () => ({
+  type: IS_AUTH
 });
 
 export const forgotPassword = (email) => ({
@@ -23,6 +30,10 @@ export const clearConfirmStep = () => ({
 export const resetUserPassword = (data) => ({
   type: RESET_USER_PASSWORD,
   payload: data
+});
+
+export const confirmAuth = () => ({
+  type: CONFIRM_AUTH
 });
 
 export const signUp = (userData) => ({

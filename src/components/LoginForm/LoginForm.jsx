@@ -10,7 +10,7 @@ import { FORGOT_PASSWORD, SIGN_UP } from '../../constants/routes';
 const LoginForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState({ email: '', password: '', remember: false });
   const loading = useSelector(state => state.userReducer.isLoading);
 
   const renderButtonText = loading ? 'LOADING' : 'SEND';
@@ -22,18 +22,19 @@ const LoginForm = () => {
 
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    dispatch(login({
-      form,
-      history
-    }));
+    dispatch(login({ form, history }));
 
-    setForm({ email: '', password: '' });
-  }, []);
+    setForm({ email: '', password: '', remember: false });
+  }, [form]);
 
-  const onChangeHandler = (e) => {
-    const { value, name } = e.target;
-    setForm({ ...form, [name]: value });
-  };
+  const onChangeHandler = useCallback((e) => {
+    if (e.target.type === 'checkbox') {
+      setForm({ ...form, remember: e.target.checked });
+    } else {
+      const { value, name } = e.target;
+      setForm({ ...form, [name]: value });
+    }
+  }, [form]);
 
   return (
     <form action="" method='post' className='sign-in-container'>
