@@ -12,9 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResetPassword/ResetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetPassword/ResetPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResetPassword/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetPassword/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +31,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pC91l95frUUSkImYlbOPeLRfsH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,19 +66,6 @@
       <recent name="$PROJECT_DIR$/src/components/SignUpForm" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -96,7 +81,8 @@
       <workItem from="1615233344728" duration="117000" />
       <workItem from="1615233485630" duration="24634000" />
       <workItem from="1615296198047" duration="68975000" />
-      <workItem from="1615462299518" duration="2701000" />
+      <workItem from="1615462299518" duration="2934000" />
+      <workItem from="1615467057554" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -182,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615462690114</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add reset password page">
+      <created>1615466901257</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1615466901257</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +206,8 @@
     <MESSAGE value="Refactor style and logic signUp" />
     <MESSAGE value="Refactor style" />
     <MESSAGE value="add to gitignor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add to gitignor" />
+    <MESSAGE value="Add reset password page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add reset password page" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -224,10 +218,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="709" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1615277448588" />
-    <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1614760456405">
+    <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1615467025942">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="748" y="280" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1614760456405" />
+    <state x="748" y="280" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1615467025942" />
     <state x="776" y="425" key="Github.CreateGistDialog" timestamp="1615413153700">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -236,14 +230,22 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="548" y="268" key="IDE.errors.dialog/0.0.1920.1044@0.0.1920.1044" timestamp="1614676612652" />
+    <state x="192" y="90" key="MergeDialog" timestamp="1615466936951">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="192" y="90" key="MergeDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1615466936951" />
+    <state x="596" y="277" key="MultipleFileMergeDialog" timestamp="1615466936955">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="596" y="277" key="MultipleFileMergeDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1615466936955" />
     <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615466083828">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615466083828" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615462692473">
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615466903248">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615462692473" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615466903248" />
     <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615466618793">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
