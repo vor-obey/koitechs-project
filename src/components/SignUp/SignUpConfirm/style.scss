@@ -1,0 +1,17 @@
+.confirm-reg-container {
+    width: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    p {
+        text-align: center;
+    }
+    .confirm-reg-links {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        a {
+            color: dodgerblue;
+        }
+    }
+}

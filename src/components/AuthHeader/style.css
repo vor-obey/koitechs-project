@@ -1,5 +1,6 @@
 .headerWrapper {
-  position: absolute;
+  position: fixed;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -7,6 +8,7 @@
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  background-color: #391d8c;
+  background-color: dodgerblue;
+  color: white;
   height: 50px;
 }

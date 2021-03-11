@@ -5,6 +5,8 @@ import './style.css';
 import { CREATE_ACCOUNT } from '../../constants/routes';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers } from '../../data/store/clients/clientActions';
+import MainButton from '../../components/MainButton';
+import { getUser } from '../../data/store/user/userActions';
 
 const Clients = () => {
   const history = useHistory();
@@ -18,6 +20,7 @@ const Clients = () => {
 
   useEffect(() => {
     dispatch(getUsers());
+    dispatch(getUser());
   }, [dispatch]);
 
   return (
@@ -26,7 +29,7 @@ const Clients = () => {
         {userSelect}
       </select>
 
-      <button onClick={onCreateAccount}>Create new client account</button>
+      <MainButton disabled onClick={onCreateAccount}>Create new client account</MainButton>
     </div>
   );
 };

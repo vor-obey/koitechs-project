@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 
-import ChoseAccount from './ChooseAccount';
-import ChoseName from './ChooseName';
+import ChooseAccount from './ChooseAccount';
+import ChooseName from './ChooseName';
 
 const CreateAccount = () => {
   const [nextStep, setNextStep] = useState(false);
-  const [clientData, setClientData] = useState({ account: '', name: '' });
+  const [clientData, setClientData] = useState({ account: 'alias', name: '' });
 
   return (
     <>
       {!nextStep
-        ? <ChoseAccount
+        ? <ChooseAccount
           setNextStep={setNextStep}
           setClientData={setClientData}
           clientData={clientData}
         />
-        : <ChoseName
+        : <ChooseName
           setClientData={setClientData}
           clientData={clientData}
         />

@@ -12,9 +12,10 @@ import SignUp from '../SignUp';
 
 const AuthRouting = () => {
   return (
-    <div className='root'>
+    <div>
       <AuthHeader/>
-        <Switch>
+      <div className='root'>
+         <Switch>
           <PrivateRoute exact path={LOGIN} component={LoginForm}/>
           <PrivateRoute exact path={RESET_PASSWORD} component={ResetPassword}/>
           <PrivateRoute exact path={SIGN_UP} component={SignUp}/>
@@ -22,8 +23,9 @@ const AuthRouting = () => {
           <Route exact path={FORGOT_PASSWORD} component={ForgotPassword}/>
           <Redirect to={LOGIN}/>
         </Switch>
+      </div>
       <AuthFooter />
-  </div>
+    </div>
   );
 };
 

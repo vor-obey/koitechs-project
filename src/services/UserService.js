@@ -2,7 +2,6 @@ export default class UserService {
   static authUserService = async (data) => {
     console.log(data);
     const { email, password } = data;
-    console.log(email, password);
     const user = {
       id: 1,
       email: 'Irakli@gmail.com',
@@ -42,9 +41,9 @@ export default class UserService {
   static getUserService = async () => {
     return Promise.resolve({
       id: 1,
-      name: 'Leanne Graham',
+      name: 'Irakli',
       username: 'Bret',
-      email: 'Sincere@april.biz',
+      email: 'Irakli@gmail.com',
       address: {
         street: 'Kulas Light',
         suite: 'Apt. 556',
@@ -66,6 +65,7 @@ export default class UserService {
   };
 
   static userService = async (data) => {
+    console.log(data);
     return Promise.resolve({
       accessToken: 'accessToken',
       refreshToken: 'refreshToken'

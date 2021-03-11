@@ -1,3 +1,3 @@
-import ChoseName from './ChoseName';
+import ChooseName from './ChooseName';
 
-export default ChoseName;
+export default ChooseName;

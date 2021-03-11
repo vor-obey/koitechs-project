@@ -1,6 +1,7 @@
 .back-to-container {
     width: 400px;
-    border: 2px solid black;
+    border: 1px solid black;
+    border-radius: 3px;
     padding: 10px;
     margin-top: 2px;
 }

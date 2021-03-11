@@ -5,7 +5,7 @@ import {
   RESET_USER_PASSWORD,
   SIGN_UP_USER,
   GET_USER,
-  LOG_OUT, CONFIRM_AUTH
+  LOG_OUT, CONFIRM_AUTH, CHANGE_EMAIL
 } from './user/userActionTypes';
 import * as userSaga from './user/userSaga';
 import * as clientSaga from './clients/clientSaga';
@@ -19,6 +19,7 @@ export function * rootSaga () {
   yield takeEvery(CONFIRM_AUTH, userSaga.confirmAuth);
   yield takeEvery(GET_USER, userSaga.getUser);
   yield takeEvery(LOG_OUT, userSaga.logOut);
+  yield takeEvery(CHANGE_EMAIL, userSaga.changeEmail);
 
   yield takeEvery(GET_USERS, clientSaga.getUsers);
   yield takeEvery(CREATE_CLIENT_ACCOUNT, clientSaga.createClientAccount);

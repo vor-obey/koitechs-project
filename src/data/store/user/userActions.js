@@ -6,7 +6,7 @@ import {
   SIGN_UP_USER,
   GET_USER,
   LOG_OUT,
-  CONFIRM_AUTH, IS_AUTH
+  CONFIRM_AUTH, IS_AUTH, CHANGE_EMAIL
 } from './userActionTypes';
 
 export const login = (loginData) => ({
@@ -47,4 +47,9 @@ export const getUser = () => ({
 
 export const logOut = () => ({
   type: LOG_OUT
+});
+
+export const changeEmail = (email) => ({
+  type: CHANGE_EMAIL,
+  payload: email
 });

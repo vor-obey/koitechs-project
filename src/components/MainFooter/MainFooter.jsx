@@ -1,10 +1,10 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
 const MainFooter = () => {
   return (
     <div className='main-footer'>
-
+      Footer
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import {
+  CHANGE_EMAIL_ERROR,
+  CHANGE_EMAIL_REQUEST, CHANGE_EMAIL_SUCCESS,
   CONFIRM_AUTH_ERROR,
   CONFIRM_AUTH_REQUEST,
   CONFIRM_AUTH_SUCCESS,
@@ -18,22 +20,25 @@ import {
   SIGN_UP_USER_PENDING,
   SIGN_UP_USER_REQUEST
 } from './userActionTypes';
-import { put } from '@redux-saga/core/effects';
+import { put, call } from '@redux-saga/core/effects';
 import { CLIENTS, LOGIN } from '../../../constants/routes';
 import StorageService from '../../../services/StorageService';
 import UserService from '../../../services/UserService';
+import { delay } from '../../../helpers/delay';
 
 export function * login (action) {
   try {
-    const { history, form } = action.payload;
+    const { history, fields } = action.payload;
     yield put({ type: LOGIN_USER_REQUEST });
-    const response = yield UserService.authUserService(form);
+    const response = yield UserService.authUserService(fields);
     if (response) {
+      yield call(delay);
       yield put({ type: LOGIN_USER_SUCCESS, payload: response.user });
       StorageService.setItem('acc', response.accessToken);
       StorageService.setItem('rfr', response.refreshToken);
       history.push(CLIENTS);
     } else {
+      alert('User not find');
       yield put({ type: LOGIN_USER_ERROR });
     }
   } catch (e) {
@@ -46,6 +51,7 @@ export function * forgotPassword (action) {
     yield put({ type: FORGOT_PASSWORD_REQUEST });
     const response = yield UserService.restorePassword(action.payload);
     if (response) {
+      yield call(delay);
       yield put({ type: FORGOT_PASSWORD_SUCCESS });
     } else {
       yield put({ type: FORGOT_PASSWORD_ERROR });
@@ -61,6 +67,7 @@ export function * resetUserPassword (action) {
     yield put({ type: RESET_USER_PASSWORD_REQUEST });
     const response = yield UserService.resetPassword(action.payload);
     if (response) {
+      yield call(delay);
       yield put({ type: RESET_USER_PASSWORD_SUCCESS });
       history.push(LOGIN);
     } else {
@@ -73,11 +80,11 @@ export function * resetUserPassword (action) {
 
 export function * signUp (action) {
   try {
-    const { signUpForm } = action.payload;
     yield put({ type: SIGN_UP_USER_REQUEST });
-    const response = yield UserService.userService(signUpForm);
+    const response = yield UserService.userService(action.payload);
 
     if (response) {
+      yield call(delay);
       yield put({ type: SIGN_UP_USER_PENDING });
     } else {
       yield put({ type: SIGN_UP_USER_ERROR });
@@ -87,11 +94,27 @@ export function * signUp (action) {
   }
 }
 
+export function * changeEmail (action) {
+  try {
+    yield put({ type: CHANGE_EMAIL_REQUEST });
+    const response = action.payload;
+    if (response) {
+      yield call(delay);
+      yield put({ type: CHANGE_EMAIL_SUCCESS });
+    } else {
+      yield put({ type: CHANGE_EMAIL_ERROR });
+    }
+  } catch (e) {
+    yield put({ type: CHANGE_EMAIL_ERROR });
+  }
+}
+
 export function * confirmAuth () {
   try {
     yield put({ type: CONFIRM_AUTH_REQUEST });
     const response = true;
     if (response) {
+      yield call(delay);
       yield put({ type: CONFIRM_AUTH_SUCCESS });
     } else {
       yield put({ type: CONFIRM_AUTH_ERROR });

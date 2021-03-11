@@ -1,4 +1,6 @@
 import {
+  CHANGE_EMAIL_ERROR,
+  CHANGE_EMAIL_REQUEST, CHANGE_EMAIL_SUCCESS,
   CLEAR_CONFIRM_STEP,
   CONFIRM_AUTH_ERROR,
   CONFIRM_AUTH_REQUEST,
@@ -8,7 +10,7 @@ import {
   FORGOT_PASSWORD_SUCCESS,
   GET_USER_ERROR,
   GET_USER_REQUEST,
-  GET_USER_SUCCESS, IS_AUTH,
+  GET_USER_SUCCESS, GO_TO_CHANGE_EMAIL, IS_AUTH,
   LOG_OUT,
   LOGIN_USER_ERROR,
   LOGIN_USER_REQUEST,
@@ -21,7 +23,7 @@ import {
   SIGN_UP_USER_REQUEST,
   SIGN_UP_USER_SUCCESS
 } from './userActionTypes';
-import { PENDING, SUCCESS } from '../../../constants/authStatus';
+import { CHANGE_EMAIL, PENDING, SUCCESS } from '../../../constants/authStatus';
 
 const initialState = {
   token: '',
@@ -123,7 +125,7 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         auth: {
-          status: SUCCESS
+          status: ''
         }
       };
 
@@ -194,6 +196,40 @@ export const userReducer = (state = initialState, action) => {
           status: ''
         }
       };
+
+    case GO_TO_CHANGE_EMAIL: {
+      return {
+        ...state,
+        auth: {
+          status: CHANGE_EMAIL
+        }
+      };
+    }
+
+    case CHANGE_EMAIL_REQUEST: {
+      return {
+        ...state,
+        isLoading: true
+      };
+    }
+
+    case CHANGE_EMAIL_SUCCESS: {
+      return {
+        ...state,
+        isLoading: false,
+        auth: {
+          status: PENDING
+        }
+      };
+    }
+
+    case CHANGE_EMAIL_ERROR: {
+      return {
+        ...state,
+        isError: true,
+        isLoading: false
+      };
+    }
 
     default: {
       return state;

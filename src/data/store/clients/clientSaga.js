@@ -24,6 +24,7 @@ export function * getUsers () {
 
 export function * createClientAccount (action) {
   try {
+    console.log(action);
     yield put({ type: CREATE_CLIENT_ACCOUNT_REQUEST });
     const response = ClientService.setClient(action.payload);
     console.log(action.payload);

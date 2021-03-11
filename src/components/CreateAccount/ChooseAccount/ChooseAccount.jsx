@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import './style.css';
+import './style.scss';
+import MainButton from '../../MainButton';
 
-const ChoseAccount = ({ setNextStep, setClientData, clientData }) => {
+const ChooseAccount = ({ setNextStep, setClientData, clientData }) => {
   const onHandleChange = useCallback((e) => {
     setClientData({ ...clientData, account: e.target.value });
   }, [clientData]);
@@ -21,22 +22,22 @@ const ChoseAccount = ({ setNextStep, setClientData, clientData }) => {
         alias account or a complete customer account
       </p>
       <div>
-        <input type="radio" name='alias' value='alias' id='alias' onChange={onHandleChange}/>
+        <input type="radio" name='alias' value='alias' checked id='alias' onChange={onHandleChange}/>
         <label htmlFor="alias">Alias account</label>
 
         <input type="radio" name='alias' value='complete' id='complete' disabled onChange={onHandleChange}/>
         <label htmlFor="complete">Complete account</label>
       </div>
 
-      <button type='submit'>Move on</button>
+      <MainButton disabled type='submit'>Move on</MainButton>
 
     </form>
   );
 };
 
-export default ChoseAccount;
+export default ChooseAccount;
 
-ChoseAccount.propTypes = {
+ChooseAccount.propTypes = {
   setNextStep: PropTypes.func,
   setClientData: PropTypes.func,
   clientData: PropTypes.object

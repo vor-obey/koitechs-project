@@ -1,3 +1,3 @@
-import ChoseAccount from './ChoseAccount';
+import ChooseAccount from './ChooseAccount';
 
-export default ChoseAccount;
+export default ChooseAccount;

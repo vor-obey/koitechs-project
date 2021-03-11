@@ -1,13 +1,14 @@
 .navbar {
     height: fit-content;
-    background-color: grey;
+    background-color: lightgrey;
     width: 100%;
     position: sticky;
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    align-items: center;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -36,10 +37,24 @@ a {
 .user-info-container {
     display: flex;
     justify-content: space-between;
-    width: 200px;
     align-items: center;
+    button {
+        border: none;
+        color: white;
+        background-color: dodgerblue;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 2px 10px;
+        cursor: pointer;
+    }
+}
+.user-info-block {
+    width: 300px;
+    input {
+        width: 100%;
+        padding: 3px 10px;
+        outline-color: #217fe4;
+        box-sizing: border-box;
+    }
 }
 
-.user-info-container button {
-    height: fit-content;
-}
