@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import './style.scss';
 import { useDispatch } from 'react-redux';
 import { clearConfirmStep } from '../../../data/store/user/userActions';
-import { LOGIN } from '../../../constants/routes';
+import { LOGIN, RESET_PASSWORD } from '../../../constants/routes';
 import BackToSignUp from '../../BackToSignUp';
+import MainButton from '../../MainButton';
 
 const ForgotPasswordConfirmation = ({ history }) => {
   const dispatch = useDispatch();
@@ -17,6 +18,10 @@ const ForgotPasswordConfirmation = ({ history }) => {
   useEffect(() => {
     return () => dispatch(clearConfirmStep());
   });
+
+  const onSimulate = useCallback(() => {
+    history.push(RESET_PASSWORD);
+  }, [history]);
 
   return (
     <>
@@ -35,6 +40,7 @@ const ForgotPasswordConfirmation = ({ history }) => {
         <a onClick={handleClick}>Back to the login</a>
       </div>
       <BackToSignUp />
+      <MainButton disabled onClick={onSimulate}>Simulate send message</MainButton>
     </>
   );
 };

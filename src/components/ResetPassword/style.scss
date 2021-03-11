@@ -1,0 +1,32 @@
+.reset-container {
+    width: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 3px;
+    h2 {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    label {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    input {
+        outline-color: dodgerblue;
+        margin-bottom: 25px;
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+    .checkbox-show-password-container {
+        display: flex;
+        align-items: center;
+        input {
+            margin: 0 10px 0 0;
+        }
+        label {
+            margin: 0;
+        }
+    }
+}

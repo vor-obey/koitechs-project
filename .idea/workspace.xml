@@ -12,6 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetPassword/ResetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetPassword/ResetPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetPassword/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetPassword/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -64,6 +67,19 @@
       <recent name="$PROJECT_DIR$/src/components/SignUp/SignUpForm" />
       <recent name="$PROJECT_DIR$/src/components/SignUpForm" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,7 +96,7 @@
       <workItem from="1615233344728" duration="117000" />
       <workItem from="1615233485630" duration="24634000" />
       <workItem from="1615296198047" duration="68975000" />
-      <workItem from="1615462299518" duration="306000" />
+      <workItem from="1615462299518" duration="2701000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -159,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615461042564</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add to gitignor">
+      <created>1615462690114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615462690114</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +212,8 @@
     <MESSAGE value="Add logic CreateAccount" />
     <MESSAGE value="Refactor style and logic signUp" />
     <MESSAGE value="Refactor style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor style" />
+    <MESSAGE value="add to gitignor" />
+    <option name="LAST_COMMIT_MESSAGE" value="add to gitignor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -212,14 +236,18 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="548" y="268" key="IDE.errors.dialog/0.0.1920.1044@0.0.1920.1044" timestamp="1614676612652" />
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615397835161">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615466083828">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615397835161" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615461044756">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615466083828" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615462692473">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615461044756" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615462692473" />
+    <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615466618793">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615466618793" />
     <state x="664" y="261" width="592" height="554" key="find.popup" timestamp="1615460989285">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
