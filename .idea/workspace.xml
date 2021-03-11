@@ -11,55 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SendEmail/ChangeEmail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SendEmail/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SendEmail/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/delay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthFooter/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthFooter/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthHeader/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthHeader/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BackToSignUp/BackToSignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BackToSignUp/BackToSignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BackToSignUp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BackToSignUp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/ChoseAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/ChooseAccount.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/ChoseName.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/ChooseName.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/CreateAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/CreateAccount.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/ForgotPassworForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/ForgotPassworForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainButton/MainButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainButton/MainButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainButton/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainButton/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainFooter/MainFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainFooter/MainFooter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainFooter/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainFooter/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Routing/AuthRoutin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/AuthRoutin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Routing/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/SignUpConfirmSuccess.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/SignUpConfirmSuccess.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/authStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/authStatus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/rootSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userActionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userActionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/store/user/userSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Clients/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +94,7 @@
       <workItem from="1615230012602" duration="2029000" />
       <workItem from="1615233344728" duration="117000" />
       <workItem from="1615233485630" duration="24634000" />
-      <workItem from="1615296198047" duration="68662000" />
+      <workItem from="1615296198047" duration="68975000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -214,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615398762870</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactor style">
+      <created>1615461042564</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615461042564</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +202,8 @@
     <MESSAGE value="Add CreateAccount pages, logOut , refactor pages" />
     <MESSAGE value="Add logic CreateAccount" />
     <MESSAGE value="Refactor style and logic signUp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor style and logic signUp" />
+    <MESSAGE value="Refactor style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor style" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -270,10 +230,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615397835161" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615398766468">
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615461044756">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615398766468" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615461044756" />
     <state x="664" y="261" width="592" height="554" key="find.popup" timestamp="1615460989285">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
