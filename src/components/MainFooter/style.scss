@@ -9,10 +9,11 @@
     align-items: center;
     box-sizing: border-box;
     position: relative;
+    z-index: 15;
     .vertical-line {
         height: 100%;
         width: 1px;
-        left: 74px;
+        left: 75px;
         background-color: grey;
         position: absolute;
     }

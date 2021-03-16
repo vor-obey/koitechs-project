@@ -3,35 +3,28 @@ import { useDispatch } from 'react-redux';
 
 import { signUp } from '../../../data/store/user/userActions';
 import './style.scss';
-import { NavLink } from 'react-router-dom';
-import { useFormik } from 'formik';
-import { signUpValidation } from '../../../helpers/validation';
-import { Button, Form, Row } from 'antd';
+import { NavLink as Nav } from 'react-router-dom';
+import {
+  confirmPassRules,
+  emailRules,
+  nameRules,
+  numberRules,
+  passwordRules
+} from '../../../helpers/validation';
+import { Form, Input, Row, Checkbox, Typography, Radio } from 'antd';
+import MainButton from '../../MainButton';
 
-const style = { color: 'red', position: 'absolute', top: 60, fontSize: 14 };
+const { Title } = Typography;
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState('password');
-  const [agreement, setAgreement] = useState(false);
+  const [type, setType] = React.useState('advisor');
 
-  const formik = useFormik({
-    initialValues: {
-      role: 'advisor',
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      password: '',
-      passwordConfirm: ''
-    },
-    validationSchema: signUpValidation,
-    onSubmit: fields => onSubmit(fields)
-  });
-
-  const onChangeCheckbox = useCallback((e) => {
-    setAgreement(e.target.checked);
-  }, [setAgreement]);
+  const onChangeType = (e) => {
+    console.log('radio checked', e.target.value);
+    setType(e.target.value);
+  };
 
   const checkboxHandler = useCallback((e) => {
     const { checked } = e.target;
@@ -40,10 +33,12 @@ const SignUpForm = () => {
     } else {
       setShowPassword('password');
     }
-  }, []);
+  }, [showPassword]);
 
   const onSubmit = useCallback((fields) => {
-    dispatch(signUp(fields));
+    const { agreement, ...data } = fields;
+    dispatch(signUp({ ...data, role: type }));
+    console.log({ ...data, role: type });
   }, [dispatch]);
 
   const [form] = Form.useForm();
@@ -58,141 +53,72 @@ const SignUpForm = () => {
     <Row className='sign-up-row'>
         <Form form={form} name="horizontal_login" layout="vertical" onFinish={onSubmit} className='sign-up-container'>
         <div>
-          <h4>Role*</h4>
-          <div className='radio-input-block'>
-            <div>
-              <input type="radio" name="role" id="client" disabled />
-              <label htmlFor="role">Client</label>
-            </div>
-
-            <div>
-              <input
-                type="radio"
-                name="role"
-                id="advisor"
-                checked
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.firstName}/>
-              <label htmlFor="role">Advisor</label>
-            </div>
-          </div>
+          <Title level={4}>Role*</Title>
+          <Radio.Group onChange={onChangeType} value={type} className='radio-input-block'>
+            <Radio value='client' disabled>Client</Radio>
+            <Radio value='advisor'>Advisor</Radio>
+          </Radio.Group>
         </div>
 
         <div className="sign-up-wrapper">
-          <h4>Name</h4>
-          <div className='sign-up-input-block'>
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="First name..."
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.firstName}
-          />
-            {formik.touched.firstName && formik.errors.firstName
-              ? (
-              <div style={style}>{formik.errors.firstName}</div>
-                )
-              : null}
-          </div>
+          <Title level={4}>Name</Title>
+            <Form.Item
+              label='First name'
+              name="firstName"
+              rules={nameRules}
+            >
+              <Input placeholder="First name" />
+            </Form.Item>
 
-          <div className='sign-up-input-block'>
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            placeholder="Last name..."
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.lastName}
-          />
-            {formik.touched.lastName && formik.errors.lastName
-              ? (
-                <div style={style}>{formik.errors.lastName}</div>
-                )
-              : null}
-          </div>
+          <Form.Item
+              label='Last name'
+              name="lastName"
+              rules={nameRules}
+            >
+              <Input placeholder="Last name" />
+            </Form.Item>
         </div>
 
-        <div className="sign-up-wrapper">
-          <h4>Contact Information</h4>
-          <div className='sign-up-input-block'>
-          <label htmlFor="email">Email address</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email..."
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-            {formik.touched.email && formik.errors.email
-              ? (
-                <div style={style}>{formik.errors.email}</div>
-                )
-              : null}
+          <div className="sign-up-wrapper">
+            <Title level={4}>Email</Title>
+            <Form.Item
+              label='Email'
+              name="email"
+              rules={emailRules}
+            >
+              <Input placeholder="Email" />
+            </Form.Item>
           </div>
 
-          <div className='sign-up-input-block'>
-          <label htmlFor="phone">Mobile Phone</label>
-          <input
-            type="phone"
-            name="phone"
-            id="phone"
-            placeholder="Phone..."
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.phone}
-          />
-            {formik.touched.phone && formik.errors.phone
-              ? (
-                <div style={style}>{formik.errors.phone}</div>
-                )
-              : null}
-          </div>
-        </div>
-
-        <div className="sign-up-wrapper">
-          <h4>Password</h4>
-          <div className='sign-up-input-block'>
-          <label htmlFor="password">Password</label>
-          <input
-            type={showPassword}
-            name="password"
-            id="password"
-            placeholder="Password..."
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-          />
-            {formik.touched.password && formik.errors.password
-              ? (
-                <div style={style}>{formik.errors.password}</div>
-                )
-              : null}
+          <div className="sign-up-wrapper">
+            <Title level={4}>Phone</Title>
+            <Form.Item
+              label='Phone'
+              name="phone"
+              rules={numberRules}
+            >
+              <Input placeholder="Phone" />
+            </Form.Item>
           </div>
 
-          <div className='sign-up-input-block'>
-          <label htmlFor="passwordConfirm">Confirm password</label>
-          <input
-            type={showPassword}
-            name="passwordConfirm"
-            id="passwordConfirm"
-            placeholder="Confirm password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.passwordConfirm}
-          />
-            {formik.touched.passwordConfirm && formik.errors.passwordConfirm
-              ? (
-                <div style={style}>{formik.errors.passwordConfirm}</div>
-                )
-              : null}
+          <div className="sign-up-wrapper">
+            <Title level={4}>Password</Title>
+            <Form.Item
+              label='Password'
+              name="password"
+              rules={passwordRules}
+            >
+              <Input placeholder="Password" type={showPassword}/>
+            </Form.Item>
+
+            <Form.Item
+              label='Confirm password'
+              name="passwordConfirm"
+              dependencies={['password']}
+              rules={confirmPassRules}
+            >
+              <Input placeholder="Confirm password" type={showPassword} />
+            </Form.Item>
           </div>
 
           <ul>
@@ -201,44 +127,37 @@ const SignUpForm = () => {
             <li>At least one capital letter</li>
             <li>At least one special character ~@#$%^& </li>
           </ul>
-        </div>
 
         <div className='checkbox-show-password-block'>
-          <input
-            type="checkbox"
-            id="showPassword"
-            name="showPassword"
-            onChange={checkboxHandler}
-          />
-          <label htmlFor="showPassword">Show password</label>
+          <Checkbox onChange={checkboxHandler}>Show password</Checkbox>
         </div>
 
         <div>
-          <h4>Terms and conditions agreement</h4>
+          <Title level={4}>Terms and conditions agreement</Title>
 
-          <NavLink to='#'>User term and conditions</NavLink>
+          <Nav to='#'>User term and conditions</Nav>
 
           <div className='agreement-block sign-up-input-block'>
-            <input type="checkbox" name="agreement" id="agreement" onChange={onChangeCheckbox} checked={agreement} value={agreement}/>
-            <label htmlFor="agreement">
-              I have read, understood and agree to the above terms and conditions
-            </label>
+            <Form.Item name="agreement" valuePropName="checked">
+              <Checkbox>I have read, understood and agree to the above terms and conditions
+              </Checkbox>
+            </Form.Item>
           </div>
         </div>
           <Form.Item shouldUpdate>
             {() => (
-              <Button
-                type="default"
-                htmlType="submit"
-                disabled={
-                  !form.isFieldsTouched(true) ||
-                  !!form.getFieldsError().filter(({ errors }) => errors.length).length
-                }
+              <MainButton
+              type='submit'
+              disabled={
+                !form.isFieldsTouched(true) ||
+                !!form.getFieldsError().filter(({ errors }) => errors.length).length
+              }
               >
                 Register
-              </Button>
+              </MainButton>
             )}
-          </Form.Item>      </Form>
+          </Form.Item>
+        </Form>
     </Row>
   );
 };

@@ -1,12 +1,12 @@
 .sign-up-row {
-    margin-top: 120px;
+    margin-top: 40px;
     padding-top: 40px;
     padding-bottom: 40px;
     margin-bottom: 40px;
     background-image: url('../Verbier_BackSide.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    width: calc(100vw - 90px);
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
 
 .sign-up-container {
     width: 550px;
-    padding: 20px !important;
+    padding: 20px 40px !important;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -24,15 +24,6 @@
         display: flex;
         flex-direction: column;
         position: relative;
-    }
-
-    h4 {
-        margin: 5px 0;
-    }
-    .radio-input-block {
-        display: flex;
-        justify-content: space-around;
-        padding: 0 20px;
     }
     a {
         color: dodgerblue;
@@ -57,22 +48,17 @@
 .sign-up-wrapper{
     display: flex;
     flex-direction: column;
-    label {
-         font-size: 14px;
-         margin-bottom: 5px;
-    }
-    input {
-        outline-color: dodgerblue;
-        margin-bottom: 25px;
-        padding: 5px 10px;
-        font-size: 16px;
+    label::before {
+        content: none !important;
     }
 }
 
 .checkbox-show-password-block {
-    display: flex;
-    align-items: center;
-    input {
-        margin-right: 10px;
-    }
+   width: fit-content;
+}
+
+.radio-input-block {
+    display: flex !important;
+    justify-content: space-around;
+    padding: 0 20px;
 }

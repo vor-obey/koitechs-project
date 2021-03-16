@@ -95,6 +95,18 @@ export const emailRules = [
   }
 ];
 
+export const numberRules = [
+  {
+    required: true,
+    message:
+      'Enter a phone number'
+  },
+  {
+    min: 8,
+    message: 'Your phone number must be at least 8 characters.'
+  }
+];
+
 export const passwordRules = [
   {
     required: true,
@@ -117,7 +129,7 @@ export const confirmPassRules = [
   },
   ({ getFieldValue }) => ({
     validator (rule, value) {
-      if (!value || getFieldValue('password') === value) {
+      if (!value || (getFieldValue('password') === value && getFieldValue('password').match(/^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8,}$/))) {
         return Promise.resolve();
       }
 
@@ -133,11 +145,24 @@ export const nameRules = [
     message: 'Is required!'
   },
   {
-    min: 8,
-    message: 'Field must be at least 8 characters.'
+    min: 4,
+    message: 'Field must be at least 4 characters.'
   },
   {
     max: 50,
     message: 'Max length 50 characters.'
   }
+];
+
+export const passwordVal = [
+  ({ getFieldValue }) => ({
+    validator (rule, value) {
+      if (!value || getFieldValue('password') === value) {
+        return Promise.resolve();
+      }
+
+      // eslint-disable-next-line prefer-promise-reject-errors
+      return Promise.reject('The two passwords that you entered do not match!');
+    }
+  })
 ];

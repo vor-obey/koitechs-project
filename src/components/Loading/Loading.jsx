@@ -6,7 +6,24 @@ import './style.scss';
 const Loading = ({ children, loading }) => {
   return (
     <div>
-      {loading ? <div className="loader">Loading...</div> : children }
+      {loading
+        ? (
+          <div className="lds-default">
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+          </div>
+          )
+        : children }
     </div>
   );
 };

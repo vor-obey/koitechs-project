@@ -18,10 +18,10 @@ const AuthRouting = () => {
       <Layout className='layout-auth'>
         <AuthHeader />
         <Content className='content'>
-          <Col className='left-label'>
-            <p>Log in</p>
-          </Col>
           <Col className='main'>
+            <div className='left-label'>
+              <p>Log in</p>
+            </div>
             <Switch>
               <PrivateRoute exact path={LOGIN} component={LoginForm}/>
               <PrivateRoute exact path={SIGN_UP} component={SignUp}/>

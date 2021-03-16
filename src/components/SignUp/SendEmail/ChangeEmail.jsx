@@ -1,42 +1,57 @@
-import React, { useCallback } from 'react';
-import { emailValidation } from '../../../helpers/validation';
-import { Form, Formik, Field, ErrorMessage } from 'formik';
+import React, { useCallback, useState, useEffect } from 'react';
+import { emailRules } from '../../../helpers/validation';
 import { useDispatch } from 'react-redux';
 
 import './style.scss';
 import { changeEmail } from '../../../data/store/user/userActions';
 import MainButton from '../../MainButton';
+import { Input, Form, Typography, Row } from 'antd';
 
-const style = { color: 'red', position: 'absolute', top: 60, fontSize: 14 };
+const { Title } = Typography;
 
 const ChangeEmail = () => {
   const dispatch = useDispatch();
 
-  const onSubmit = useCallback((fields) => {
-    dispatch(changeEmail(fields));
+  const onSubmit = useCallback((email) => {
+    dispatch(changeEmail(email));
   }, [dispatch]);
 
+  const [form] = Form.useForm();
+  const [, forceUpdate] = useState({});
+
+  // To disable submit button at the beginning.
+  useEffect(() => {
+    forceUpdate({});
+  }, []);
+
   return (
-    <Formik initialValues={{ email: '' }} onSubmit={(fields) => onSubmit(fields)} validationSchema={emailValidation}>
-      <Form className='send-email-block'>
-        <h3>Send confirmation email again</h3>
-        <div className='send-email-input-block'>
-          <label htmlFor="email">Email address</label>
-          <Field
-            type="text"
+    <Row className='send-email-wrapper'>
+    <Form form={form} name="horizontal_login" layout="vertical" onFinish={onSubmit} className='send-email-block'>
+        <Title level={3}>Send confirmation email again</Title>
+        <Row className='send-email-input-block'>
+          <Form.Item
+            label='Email address'
             name="email"
-            id="email"
-            placeholder="Email..."
-          />
-          <ErrorMessage
-            component='div'
-            name='email'
-            style={style}
-          />
-        </div>
-        <MainButton type='submit'>Send</MainButton>
-      </Form>
-    </Formik>
+            rules={emailRules}
+          >
+            <Input placeholder="Email" size='large' />
+          </Form.Item>
+        </Row>
+      <Form.Item shouldUpdate>
+        {() => (
+          <MainButton
+            type='submit'
+            disabled={
+              !form.isFieldsTouched(true) ||
+              !!form.getFieldsError().filter(({ errors }) => errors.length).length
+            }
+          >
+            Register
+          </MainButton>
+        )}
+      </Form.Item>
+    </Form>
+    </Row>
   );
 };
 

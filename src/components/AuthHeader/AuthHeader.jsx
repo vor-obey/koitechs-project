@@ -17,11 +17,11 @@ const AuthHeader = () => {
         <img src={LogoType} alt=""/>
       </div>
       <Menu mode="horizontal" className='header-nav'>
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-        <Menu.Item key="4">nav 4</Menu.Item>
-        <Button onClick={() => history.push(LOGIN)}>Log in</Button>
+        <Menu.Item key="1" disabled>Nyhetsrum </Menu.Item>
+        <Menu.Item key="2" disabled>Om oss </Menu.Item>
+        <Menu.Item key="3" disabled>Våra tjänster</Menu.Item>
+        <Menu.Item key="4" disabled>Karriär</Menu.Item>
+        <Button onClick={() => history.push(LOGIN)}>Logga in</Button>
       </Menu>
       <div className='underline' />
     </Header>

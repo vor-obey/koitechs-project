@@ -1,9 +1,23 @@
 .sign-up-success {
-    width: 400px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    padding: 40px !important;
     p {
         text-align: center;
     }
+}
+
+.confirm-success-wrapper {
+    background-image: url('../Verbier_BackSide.jpg');
+    background-position: 0 -200px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: calc(100vh - 91px - 80px);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
