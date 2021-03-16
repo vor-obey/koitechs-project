@@ -1,20 +1,17 @@
 import React from 'react';
 import { SIGN_UP } from '../../constants/routes';
-import { useHistory } from 'react-router';
+import { Typography } from 'antd';
 
 import './style.css';
-import MainButton from '../MainButton';
+import { NavLink as Nav } from 'react-router-dom';
+
+const { Text } = Typography;
 
 const BackToSignUp = () => {
-  const history = useHistory();
-
-  const onClick = () => {
-    history.push(SIGN_UP);
-  };
   return (
     <div className='back-to-container'>
-      <h2>A you a new customer?</h2>
-      <MainButton onClick={onClick}>Register now</MainButton>
+      <Text>A you a new customer?</Text>
+      <Nav to={SIGN_UP}><Text strong> Register now</Text></Nav>
     </div>
   );
 };

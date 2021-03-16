@@ -1,69 +1,62 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import './style.scss';
 import { useDispatch } from 'react-redux';
 import { forgotPassword } from '../../../data/store/user/userActions';
 import { LOGIN } from '../../../constants/routes';
 import BackToSignUp from '../../BackToSignUp';
-import { useHistory } from 'react-router';
+import { emailRules } from '../../../helpers/validation';
+import { Form, Input, Row, Typography } from 'antd';
 import MainButton from '../../MainButton';
-import { useFormik } from 'formik';
-import { emailValidation, onDisable } from '../../../helpers/validation';
+import { NavLink as Nav } from 'react-router-dom';
 
-const style = { color: 'red', position: 'absolute', top: 65, fontSize: 14 };
+const { Text } = Typography;
 
 const ForgotPasswordForm = () => {
-  const history = useHistory();
   const dispatch = useDispatch();
-
-  const handleClick = useCallback((e) => {
-    e.preventDefault();
-    history.push(LOGIN);
-  }, [history]);
-
-  const formik = useFormik({
-    initialValues: {
-      email: ''
-    },
-    validationSchema: emailValidation,
-    onSubmit: fields => onSubmit(fields)
-  });
-
-  const { values, isValid } = formik;
-
-  const disableBtn = useCallback(() => onDisable(values, isValid), [values, isValid]);
 
   const onSubmit = useCallback((fields) => {
     dispatch(forgotPassword(fields));
   }, [dispatch]);
 
+  const [form] = Form.useForm();
+  const [, forceUpdate] = useState({});
+
+  // To disable submit button at the beginning.
+  useEffect(() => {
+    forceUpdate({});
+  }, []);
+
   return (
-    <>
-      <form className='forgotpassword-wrapper' onSubmit={formik.handleSubmit}>
+    <Row className='forgot-password-wrapper'>
+      <Form form={form} name="horizontal_login" layout="vertical" onFinish={onSubmit} className='forgot-password-form'>
         <h2>Forgot password?</h2>
-        <div className='forgotpassword-container'>
-          <label htmlFor='email'>Email</label>
-          <input
-            type="email"
-            placeholder='email'
-            id='email'
-            name='email'
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          {formik.touched.email && formik.errors.email
-            ? (
-            <div style={style}>{formik.errors.email}</div>
-              )
-            : null}
+        <div className='forgot-password-container'>
+          <Form.Item
+            label='Email'
+            name="email"
+            rules={emailRules}
+          >
+            <Input placeholder="Email" />
+          </Form.Item>
         </div>
 
-        <MainButton disabled={!disableBtn()} type="submit">Send</MainButton>
-
-        <a onClick={handleClick}>Back to the login</a>
-      </form>
-      <BackToSignUp />
-    </>
+        <Form.Item shouldUpdate>
+          {() => (
+            <MainButton
+              type="submit"
+              disabled={
+                !form.isFieldsTouched(true) ||
+                !!form.getFieldsError().filter(({ errors }) => errors.length).length
+              }
+            >
+              Send email
+            </MainButton>
+          )}
+        </Form.Item>
+        <Nav to={LOGIN}><Text strong>Back to the login</Text></Nav>
+        <BackToSignUp />
+      </Form>
+    </Row>
   );
 };
 

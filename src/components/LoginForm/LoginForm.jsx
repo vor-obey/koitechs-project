@@ -9,6 +9,7 @@ import { FORGOT_PASSWORD, SIGN_UP } from '../../constants/routes';
 import { Form, Input, Button, Row, Typography } from 'antd';
 import Loading from '../Loading';
 import Logo from './Logo Quant.jpg';
+import { setLabel } from '../../data/store/helpers/auxiliaryActions';
 
 const { Text, Title } = Typography;
 
@@ -18,6 +19,10 @@ const LoginForm = () => {
   const [remember, setRemember] = useState(false);
   // const [activeBtn, isActiveBtn] = useState('Email');
   const isLoading = useSelector(state => state.userReducer.isLoading);
+
+  useEffect(() => {
+    dispatch(setLabel(history.location.pathname));
+  }, [history]);
 
   const emailRules = [
     {
@@ -101,7 +106,7 @@ const LoginForm = () => {
                     <label htmlFor='remember'>Remember me</label>
                   </Row>
                   <Nav className="login-form-forgot" to={FORGOT_PASSWORD}>
-                    Forgot password
+                    <Text strong>Forgot password</Text>
                   </Nav>
                 </Row>
               </Form.Item>
@@ -123,7 +128,7 @@ const LoginForm = () => {
             <Row className='create-account-text'>
               Never give out your login credentials and never
               log in at the request of someone who contacts you
-              <Nav to={SIGN_UP}>Register now!</Nav>
+              <Nav to={SIGN_UP}><Text strong>Register now!</Text></Nav>
             </Row>
           </Form>
         </Row>

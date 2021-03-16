@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { createClient } from '../../../data/store/clients/clientActions';
 import MainButton from '../../MainButton';
 import { Form, Input } from 'antd';
+import { nameRules } from '../../../helpers/validation';
 
 const ChooseName = ({ clientData }) => {
   const history = useHistory();
@@ -21,18 +22,31 @@ const ChooseName = ({ clientData }) => {
   }, [dispatch, history, clientData]);
 
   return (
-    <Form form={form} name="horizontal_login" layout="vertical" onFinish={onSubmit} className='chose-name-container'>
-        <h1>Create alias client account</h1>
-        <div className='enter-name'>
-          <Form.Item
-            label='Name'
-            name="name"
-          >
-            <Input placeholder="Name" />
-          </Form.Item>
-          <MainButton type='submit'>Register</MainButton>
-        </div>
-      </Form>
+    <Form form={form} name="horizontal_login" layout="vertical" className='chose-name-container' onFinish={onSubmit}>
+      <h1>Create alias client account</h1>
+      <div className='enter-name'>
+        <Form.Item
+          label='Name'
+          name="name"
+          rules={nameRules}
+        >
+          <Input placeholder="Name"/>
+        </Form.Item>
+        <Form.Item shouldUpdate>
+          {() => (
+            <MainButton
+              type='submit'
+              disabled={
+                !form.isFieldsTouched(true) ||
+                !!form.getFieldsError().filter(({ errors }) => errors.length).length
+              }
+            >
+              Register
+            </MainButton>
+          )}
+        </Form.Item>
+      </div>
+    </Form>
   );
 };
 

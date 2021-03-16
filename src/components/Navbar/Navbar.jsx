@@ -25,10 +25,10 @@ const Navbar = () => {
       </div>
       <Menu mode="horizontal" defaultSelectedKeys={['1']} className='header-nav'>
         <Menu.Item key="1"><Nav to={CLIENTS}>Clients</Nav></Menu.Item>
-        <Menu.Item key="2"><Nav to={INFORMATION}>Information</Nav></Menu.Item>
-        <Menu.Item key="3"><Nav to='#'>FAQ</Nav></Menu.Item>
+        <Menu.Item key="2" disabled><Nav to={INFORMATION}>Information</Nav></Menu.Item>
+        <Menu.Item key="3" disabled><Nav to='#'>FAQ</Nav></Menu.Item>
         <Menu.Item key="4"><Nav to={SUPPORT}>Support</Nav></Menu.Item>
-        <Menu.Item key="5"><Nav to='#'>Search <SearchOutlined style={{ marginLeft: 20 }} /></Nav></Menu.Item>
+        <Menu.Item key="5" disabled><Nav to='#'>Search <SearchOutlined style={{ marginLeft: 20 }} /></Nav></Menu.Item>
         <Menu.Item key="6"><Nav to={PROFILE}><UserOutlined /></Nav></Menu.Item>
         <Button onClick={onLogOut}>Log out</Button>
       </Menu>

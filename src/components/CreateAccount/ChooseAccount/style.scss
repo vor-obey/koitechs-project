@@ -10,4 +10,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .checkbox-block{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
 }

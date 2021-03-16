@@ -1,18 +1,10 @@
 .forgot-password-confirm {
-    width: 400px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 3px;
+    width: 500px;
+    padding: 40px;
+    background-color: white !important;
     p {
         background-color: lightgrey;
         text-align: center;
         padding: 5px 0;
-    }
-    a {
-        color: dodgerblue;
-        cursor: pointer;
-    }
-    h3 {
-        margin: 5px 0;
     }
 }

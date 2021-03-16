@@ -7,16 +7,13 @@ import { LOGIN } from '../../../constants/routes';
 import BackToSignUp from '../../BackToSignUp';
 import MainButton from '../../MainButton';
 import { SIMULATE_CLICK_ON_LINK } from '../../../data/store/user/userActionTypes';
-import { useHistory } from 'react-router';
+import { NavLink as Nav } from 'react-router-dom';
+import { Typography, Row } from 'antd';
+
+const { Text } = Typography;
 
 const ForgotPasswordConfirmation = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
-
-  const handleClick = useCallback((e) => {
-    e.preventDefault();
-    history.push(LOGIN);
-  }, [history]);
 
   useEffect(() => {
     return () => dispatch(clearConfirmStep());
@@ -27,7 +24,7 @@ const ForgotPasswordConfirmation = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Row className='forgot-password-wrapper'>
       <div className='forgot-password-confirm'>
         <p>
           We have sent instructions or resetting you password XXXXXXXXXXXX@XXXXX.XXX
@@ -40,11 +37,11 @@ const ForgotPasswordConfirmation = () => {
           <li>Check your spelling</li>
           <li>Wait 15 minutes and try again</li>
         </ol>
-        <a onClick={handleClick}>Back to the login</a>
+        <Nav to={LOGIN}><Text strong>Back to the login</Text></Nav>
+        <BackToSignUp />
+        <MainButton onClick={onSimulate}>Simulate send message</MainButton>
       </div>
-      <BackToSignUp />
-      <MainButton onClick={onSimulate}>Simulate send message</MainButton>
-    </>
+    </Row>
   );
 };
 

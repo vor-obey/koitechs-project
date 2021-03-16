@@ -1,34 +1,28 @@
-.forgotpassword-wrapper {
+.forgot-password-wrapper {
+    background-image: url('../Verbier_BackSide.jpg');
+    background-position: 0 -200px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: calc(100vh - 92px - 80px);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-password-form {
+    background-color: white !important;
     width: 400px;
-    padding: 10px;
-    margin: 0;
-    border: 1px solid black;
-    border-radius: 3px;
+    padding: 40px !important;
     display: flex;
     flex-direction: column;
-    a {
-        margin-top: 20px;
-    }
 }
 
-.forgotpassword-wrapper>a {
-    color: dodgerblue;
-    cursor: pointer;
-}
-
-.forgotpassword-container {
+.forgot-password-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
     position: relative;
-    input {
-        font-size: 16px;
-        margin-top: 5px;
-        padding: 5px 10px;
-        outline-color: dodgerblue;
-    }
-    label {
-        font-size: 16px;
-        margin-bottom: 5px;
+    label::before {
+        content: none !important;
     }
 }

@@ -24,7 +24,7 @@ const Clients = () => {
   // }, [dispatch]);
 
   function onChange (value, data) {
-    history.push(`/clients/profile/${data.id}`);
+    history.push(`/clients/${data.id}`);
   }
 
   function onBlur () {
