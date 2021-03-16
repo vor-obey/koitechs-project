@@ -14,7 +14,7 @@ const BackToSignUp = () => {
   return (
     <div className='back-to-container'>
       <h2>A you a new customer?</h2>
-      <MainButton disabled onClick={onClick}>Register now</MainButton>
+      <MainButton onClick={onClick}>Register now</MainButton>
     </div>
   );
 };

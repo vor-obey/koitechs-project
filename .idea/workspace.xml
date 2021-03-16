@@ -11,7 +11,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
+      <change afterPath="$PROJECT_DIR$/src/components/AuthHeader/Logo Citroneer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthHeader/Screenshot 2021-03-03 at 21.02.51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LoginForm/Logo Quant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LoginForm/Verbier_BackSide.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MainFooter/Screenshot 2021-03-03 at 21.02.57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Logo Quant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Routing/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SignUp/Verbier_BackSide.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/ProfilePasswordRow/ProfilePasswordRow.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/ProfilePasswordRow/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/ProfileRow/ProfileRow.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/ProfileRow/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/ProfileRow/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Profile/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthFooter/AuthFooter.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthFooter/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthFooter/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthHeader/AuthHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthHeader/AuthHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthHeader/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthHeader/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BackToSignUp/BackToSignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BackToSignUp/BackToSignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/ChooseAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseAccount/ChooseAccount.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/ChooseName.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAccount/ChooseName/ChooseName.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordConfirmation/ForgotPasswordConfirmation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/ForgotPassworForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPassword/ForgotPasswordForm/ForgotPassworForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loading/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading/Loading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainButton/MainButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainButton/MainButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainButton/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainButton/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainFooter/MainFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainFooter/MainFooter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainFooter/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainFooter/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetPassword/ResetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetPassword/ResetPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetPassword/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetPassword/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Routing/AuthRoutin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/AuthRoutin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Routing/Routing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/Routing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Routing/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SendEmail/ChangeEmail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SendEmail/ChangeEmail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirm/SignUpConfirm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/SignUpConfirmSuccess.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpConfirmSuccess/SignUpConfirmSuccess.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/SignUpForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUpForm/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/authStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/authStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/clients/clientReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/clients/clientReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/clients/clientSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/rootSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/user/userActionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userActionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/user/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/user/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/store/user/userSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/store/user/userSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Clients/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ClientService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ClientService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +105,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/SignUp" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -50,21 +114,37 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages/Support" />
-      <recent name="$PROJECT_DIR$/src/pages/Information" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/LoginForm" />
+      <recent name="$PROJECT_DIR$/src/components/Footer" />
+      <recent name="$PROJECT_DIR$/src/components/AuthHeader" />
+      <recent name="$PROJECT_DIR$/src/components/Routing" />
       <recent name="$PROJECT_DIR$/src/components/SignUp" />
-      <recent name="$PROJECT_DIR$/src/components/CreateAccount/ChoseAccount" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/components/SignUp/SignUpForm" />
-      <recent name="$PROJECT_DIR$/src/components/SignUpForm" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/SignUp" />
+      <recent name="$PROJECT_DIR$/src/components/SignUp/SignUpForm" />
+      <recent name="$PROJECT_DIR$/src/components/Navbar" />
+      <recent name="$PROJECT_DIR$/src/components/LoginForm" />
+      <recent name="$PROJECT_DIR$/src/components/Routing" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,6 +163,9 @@
       <workItem from="1615296198047" duration="68975000" />
       <workItem from="1615462299518" duration="2934000" />
       <workItem from="1615467057554" duration="11000" />
+      <workItem from="1615467086708" duration="27998000" />
+      <workItem from="1615625942116" duration="8547000" />
+      <workItem from="1615640046463" duration="67153000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -175,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615466901257</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add reset password">
+      <created>1615467313483</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1615467313483</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +297,8 @@
     <MESSAGE value="Refactor style" />
     <MESSAGE value="add to gitignor" />
     <MESSAGE value="Add reset password page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add reset password page" />
+    <MESSAGE value="Add reset password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add reset password" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -218,10 +309,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="709" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1615277448588" />
-    <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1615467025942">
+    <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1615753916493">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="748" y="280" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1615467025942" />
+    <state x="748" y="280" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1615753916493" />
     <state x="776" y="425" key="Github.CreateGistDialog" timestamp="1615413153700">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -238,25 +329,29 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="596" y="277" key="MultipleFileMergeDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1615466936955" />
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615466083828">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615640314064">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615466083828" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615466903248">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615640314064" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615467324983">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615466903248" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615467324983" />
     <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615466618793">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615466618793" />
-    <state x="664" y="261" width="592" height="554" key="find.popup" timestamp="1615460989285">
+    <state x="664" y="261" width="621" height="554" key="find.popup" timestamp="1615830974166">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="664" y="261" width="592" height="554" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1615460989285" />
-    <state x="624" y="238" width="672" height="677" key="run.anything.popup" timestamp="1615451887958">
+    <state x="664" y="261" width="621" height="554" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1615830974166" />
+    <state x="624" y="238" width="672" height="677" key="run.anything.popup" timestamp="1615717136406">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="624" y="238" width="672" height="677" key="run.anything.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1615451887958" />
+    <state x="624" y="238" width="672" height="677" key="run.anything.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1615717136406" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1615825547521">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1615825547521" />
   </component>
 </project>

@@ -36,7 +36,7 @@ const SignUpConfirm = () => {
           <Nav to='#' onClick={onChangeEmail}>Change email address</Nav>
           <Nav to='/' onClick={onSend}>Send confirmation email again</Nav>
         </div>
-        <MainButton disabled onClick={confirmRegistration}>Simulation confirm registration</MainButton>
+        <MainButton onClick={confirmRegistration}>Simulation confirm registration</MainButton>
       </div>
     </Loading>
   );

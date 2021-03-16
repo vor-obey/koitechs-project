@@ -3,6 +3,9 @@ export const LOGIN_USER_REQUEST = 'LOGIN_USER_REQUEST';
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
 
+export const FORGOT_PASSWORD_PENDING = 'FORGOT_PASSWORD_PENDING';
+export const SIMULATE_CLICK_ON_LINK = 'SIMULATE_CLICK_ON_LINK';
+
 export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
 export const FORGOT_PASSWORD_REQUEST = 'FORGOT_PASSWORD_REQUEST';
 export const FORGOT_PASSWORD_SUCCESS = 'FORGOT_PASSWORD_SUCCESS';
@@ -41,3 +44,16 @@ export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 export const CHANGE_EMAIL_REQUEST = 'CHANGE_EMAIL_REQUEST';
 export const CHANGE_EMAIL_SUCCESS = 'CHANGE_EMAIL_SUCCESS';
 export const CHANGE_EMAIL_ERROR = 'CHANGE_EMAIL_SUCCESS';
+
+const actionCreator = (action) => {
+  return (
+    {
+      ACTION: action,
+      REQUEST: `${action}_REQUEST`,
+      SUCCESS: `${action}_SUCCESS`,
+      ERROR: `${action}_ERROR`
+    }
+  );
+};
+
+export const USER_PROFILE_UPDATE = actionCreator('USER_PROFILE_UPDATE');

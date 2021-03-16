@@ -2,12 +2,19 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    margin: 20% auto;
+    align-items: center;
 }
 
 .clients-container select {
-    width: 400px;
     padding: 3px;
     font-size: 18px;
+}
+
+.select-clients {
+    width: 100%;
+}
+
+.dropdown {
+    border: 1px solid red;
 }
 

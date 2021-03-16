@@ -27,7 +27,6 @@ export function * createClientAccount (action) {
     console.log(action);
     yield put({ type: CREATE_CLIENT_ACCOUNT_REQUEST });
     const response = ClientService.setClient(action.payload);
-    console.log(action.payload);
     if (response) {
       yield put({ type: CREATE_CLIENT_ACCOUNT_SUCCESS, payload: response });
     } else {

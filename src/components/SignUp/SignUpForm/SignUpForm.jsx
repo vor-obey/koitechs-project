@@ -1,12 +1,12 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { signUp } from '../../../data/store/user/userActions';
 import './style.scss';
 import { NavLink } from 'react-router-dom';
-import MainButton from '../../MainButton';
-import { Form, Formik, Field, ErrorMessage } from 'formik';
+import { useFormik } from 'formik';
 import { signUpValidation } from '../../../helpers/validation';
+import { Button, Form, Row } from 'antd';
 
 const style = { color: 'red', position: 'absolute', top: 60, fontSize: 14 };
 
@@ -15,15 +15,19 @@ const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState('password');
   const [agreement, setAgreement] = useState(false);
 
-  const initialValues = {
-    role: 'advisor',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    password: '',
-    passwordConfirm: ''
-  };
+  const formik = useFormik({
+    initialValues: {
+      role: 'advisor',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      password: '',
+      passwordConfirm: ''
+    },
+    validationSchema: signUpValidation,
+    onSubmit: fields => onSubmit(fields)
+  });
 
   const onChangeCheckbox = useCallback((e) => {
     setAgreement(e.target.checked);
@@ -39,23 +43,37 @@ const SignUpForm = () => {
   }, []);
 
   const onSubmit = useCallback((fields) => {
-    console.log(fields);
     dispatch(signUp(fields));
   }, [dispatch]);
 
+  const [form] = Form.useForm();
+  const [, forceUpdate] = useState({});
+
+  // To disable submit button at the beginning.
+  useEffect(() => {
+    forceUpdate({});
+  }, []);
+
   return (
-    <Formik initialValues={initialValues} onSubmit={(fields) => onSubmit(fields)} validationSchema={signUpValidation}>
-      <Form className="sign-up-container">
+    <Row className='sign-up-row'>
+        <Form form={form} name="horizontal_login" layout="vertical" onFinish={onSubmit} className='sign-up-container'>
         <div>
           <h4>Role*</h4>
           <div className='radio-input-block'>
             <div>
-              <Field type="radio" name="role" id="client" disabled />
+              <input type="radio" name="role" id="client" disabled />
               <label htmlFor="role">Client</label>
             </div>
 
             <div>
-              <Field type="radio" name="role" id="advisor" checked />
+              <input
+                type="radio"
+                name="role"
+                id="advisor"
+                checked
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.firstName}/>
               <label htmlFor="role">Advisor</label>
             </div>
           </div>
@@ -65,32 +83,38 @@ const SignUpForm = () => {
           <h4>Name</h4>
           <div className='sign-up-input-block'>
           <label htmlFor="firstName">First Name</label>
-          <Field
+          <input
             type="text"
             name="firstName"
             id="firstName"
             placeholder="First name..."
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.firstName}
           />
-          <ErrorMessage
-            component='div'
-            name='firstName'
-            style={style}
-          />
+            {formik.touched.firstName && formik.errors.firstName
+              ? (
+              <div style={style}>{formik.errors.firstName}</div>
+                )
+              : null}
           </div>
 
           <div className='sign-up-input-block'>
           <label htmlFor="lastName">Last Name</label>
-          <Field
+          <input
             type="text"
             name="lastName"
             id="lastName"
             placeholder="Last name..."
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.lastName}
           />
-          <ErrorMessage
-            component='div'
-            name='lastName'
-            style={style}
-          />
+            {formik.touched.lastName && formik.errors.lastName
+              ? (
+                <div style={style}>{formik.errors.lastName}</div>
+                )
+              : null}
           </div>
         </div>
 
@@ -98,32 +122,38 @@ const SignUpForm = () => {
           <h4>Contact Information</h4>
           <div className='sign-up-input-block'>
           <label htmlFor="email">Email address</label>
-          <Field
+          <input
             type="text"
             name="email"
             id="email"
             placeholder="Email..."
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
           />
-          <ErrorMessage
-            component='div'
-            name='email'
-            style={style}
-          />
+            {formik.touched.email && formik.errors.email
+              ? (
+                <div style={style}>{formik.errors.email}</div>
+                )
+              : null}
           </div>
 
           <div className='sign-up-input-block'>
           <label htmlFor="phone">Mobile Phone</label>
-          <Field
+          <input
             type="phone"
             name="phone"
             id="phone"
             placeholder="Phone..."
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.phone}
           />
-          <ErrorMessage
-            component='div'
-            name='phone'
-            style={style}
-          />
+            {formik.touched.phone && formik.errors.phone
+              ? (
+                <div style={style}>{formik.errors.phone}</div>
+                )
+              : null}
           </div>
         </div>
 
@@ -131,32 +161,38 @@ const SignUpForm = () => {
           <h4>Password</h4>
           <div className='sign-up-input-block'>
           <label htmlFor="password">Password</label>
-          <Field
+          <input
             type={showPassword}
             name="password"
             id="password"
             placeholder="Password..."
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
           />
-          <ErrorMessage
-          component='div'
-          name='password'
-          style={style}
-          />
+            {formik.touched.password && formik.errors.password
+              ? (
+                <div style={style}>{formik.errors.password}</div>
+                )
+              : null}
           </div>
 
           <div className='sign-up-input-block'>
           <label htmlFor="passwordConfirm">Confirm password</label>
-          <Field
+          <input
             type={showPassword}
             name="passwordConfirm"
             id="passwordConfirm"
             placeholder="Confirm password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.passwordConfirm}
           />
-          <ErrorMessage
-            component='div'
-            name='passwordConfirm'
-            style={style}
-          />
+            {formik.touched.passwordConfirm && formik.errors.passwordConfirm
+              ? (
+                <div style={style}>{formik.errors.passwordConfirm}</div>
+                )
+              : null}
           </div>
 
           <ul>
@@ -183,20 +219,27 @@ const SignUpForm = () => {
           <NavLink to='#'>User term and conditions</NavLink>
 
           <div className='agreement-block sign-up-input-block'>
-            <Field type="checkbox" name="agreement" id="agreement" onChange={onChangeCheckbox} checked={agreement} value={agreement}/>
+            <input type="checkbox" name="agreement" id="agreement" onChange={onChangeCheckbox} checked={agreement} value={agreement}/>
             <label htmlFor="agreement">
               I have read, understood and agree to the above terms and conditions
             </label>
-            <ErrorMessage
-            component='div'
-            style={style}
-            name='agreement'
-            />
           </div>
         </div>
-        <MainButton type='submit' disabled={agreement}>Register</MainButton>
-      </Form>
-    </Formik>
+          <Form.Item shouldUpdate>
+            {() => (
+              <Button
+                type="default"
+                htmlType="submit"
+                disabled={
+                  !form.isFieldsTouched(true) ||
+                  !!form.getFieldsError().filter(({ errors }) => errors.length).length
+                }
+              >
+                Register
+              </Button>
+            )}
+          </Form.Item>      </Form>
+    </Row>
   );
 };
 

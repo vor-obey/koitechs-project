@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import './style.css';
+import './style.scss';
 import AuthRouting from './AuthRoutin';
 import MainRouting from './MainRouting';
 import StorageService from '../../services/StorageService';
@@ -13,7 +13,6 @@ const Routing = () => {
 
   useEffect(() => {
     const token = StorageService.getJWTToken('acc');
-
     if (token) {
       setAuthenticated(token);
     } else {

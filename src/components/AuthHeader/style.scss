@@ -1,0 +1,49 @@
+.header-wrap {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white !important;
+  height: 80px !important;
+  z-index: 11;
+  display: flex;
+  .logotype {
+    margin: 15px 0 15px 7px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    z-index: 11;
+    img {
+      height: auto;
+      width: 12rem;
+    }
+  }
+  .vertical-line-header {
+    height: 100%;
+    width: 1px;
+    left: 74px;
+    background-color: grey;
+    position: absolute;
+  }
+}
+
+.underline {
+  position: fixed;
+  z-index: 12;
+  width: 100%;
+  top: 80px;
+  left: 0;
+  height: 7px;
+  background-image: url('./Screenshot 2021-03-03 at 21.02.51.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}

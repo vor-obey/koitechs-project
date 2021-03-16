@@ -6,28 +6,34 @@ import './style.scss';
 import { resetUserPassword } from '../../data/store/user/userActions';
 import MainButton from '../MainButton';
 import Loading from '../Loading';
+import { useFormik } from 'formik';
+import { confirmPasswordValidation, onDisable } from '../../helpers/validation';
+import { useHistory } from 'react-router';
 
-const ResetPassword = ({ history }) => {
+const style = { color: 'red', position: 'absolute', top: 60, fontSize: 14 };
+
+const ResetPassword = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
-  const [confirmPasswordForm, setConfirmPasswordForm] = useState({ password: '', confirmPassword: '' });
   const isLoading = useSelector(state => state.userReducer.isLoading);
   const [showPassword, setShowPassword] = useState('password');
-  const { password, confirmPassword } = confirmPasswordForm;
 
-  const onChangeHandler = (e) => {
-    const { value, name } = e.target;
-    setConfirmPasswordForm({ ...confirmPasswordForm, [name]: value });
-  };
+  const formik = useFormik({
+    initialValues: {
+      password: '',
+      passwordConfirm: ''
+    },
+    validationSchema: confirmPasswordValidation,
+    onSubmit: fields => onSubmit(fields)
+  });
 
-  const passwordValidation = useCallback(() => {
-    return password === confirmPassword;
-  }, [confirmPasswordForm]);
+  const { values, isValid } = formik;
 
-  const onSubmit = useCallback((e) => {
-    e.preventDefault();
-    dispatch(resetUserPassword({ ...confirmPasswordForm, history }));
-    setConfirmPasswordForm({ password: '', confirmPassword: '' });
-  }, [dispatch, setConfirmPasswordForm]);
+  const disableBtn = useCallback(() => onDisable(values, isValid), [values, isValid]);
+
+  const onSubmit = useCallback((fields) => {
+    dispatch(resetUserPassword({ fields, history }));
+  }, [dispatch]);
 
   const checkboxHandler = useCallback((e) => {
     const { checked } = e.target;
@@ -40,13 +46,41 @@ const ResetPassword = ({ history }) => {
 
   return (
     <Loading loading={isLoading}>
-    <form method='post' className='reset-container' onSubmit={onSubmit}>
+    <form method='post' className='reset-container' onSubmit={formik.handleSubmit}>
       <h2>Your new password</h2>
+      <div className='reset-input-container'>
       <label htmlFor='password'>Password</label>
-      <input name='password' id='password' type={showPassword} value={password} onChange={onChangeHandler}/>
+      <input
+        name='password'
+        id='password'
+        type={showPassword}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.password}
+      />
+      {formik.touched.password && formik.errors.password
+        ? (
+          <div style={style}>{formik.errors.password}</div>
+          )
+        : null}
+      </div>
 
-      <label htmlFor='confirmPassword'>Confirm password</label>
-      <input name='confirmPassword' id='confirmPassword' type={showPassword} value={confirmPassword} onChange={onChangeHandler}/>
+      <div className='reset-input-container'>
+      <label htmlFor='passwordConfirm'>Confirm password</label>
+      <input
+        name='passwordConfirm'
+        id='passwordConfirm'
+        type={showPassword}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.passwordConfirm}
+      />
+      {formik.touched.passwordConfirm && formik.errors.passwordConfirm
+        ? (
+          <div style={style}>{formik.errors.passwordConfirm}</div>
+          )
+        : null}
+      </div>
 
       <div className='checkbox-show-password-container'>
         <input name='showPassword' id='showPassword' type='checkbox' onChange={checkboxHandler}/>
@@ -55,7 +89,7 @@ const ResetPassword = ({ history }) => {
 
       <MainButton
         type="submit"
-        disabled={passwordValidation()}>
+        disabled={!disableBtn()}>
         Change password
       </MainButton>
     </form>

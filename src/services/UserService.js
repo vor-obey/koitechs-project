@@ -72,6 +72,10 @@ export default class UserService {
     });
   };
 
+  static userProfileUpdate = async (data) => {
+    return data;
+  }
+
   static restorePassword = async (data) => {
     return Promise.resolve('success');
   };

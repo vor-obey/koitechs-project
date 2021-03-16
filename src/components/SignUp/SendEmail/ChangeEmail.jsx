@@ -34,7 +34,7 @@ const ChangeEmail = () => {
             style={style}
           />
         </div>
-        <MainButton disabled type='submit'>Send</MainButton>
+        <MainButton type='submit'>Send</MainButton>
       </Form>
     </Formik>
   );

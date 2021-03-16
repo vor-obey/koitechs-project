@@ -4,9 +4,8 @@ import {
   CONFIRM_AUTH_ERROR,
   CONFIRM_AUTH_REQUEST,
   CONFIRM_AUTH_SUCCESS,
-  FORGOT_PASSWORD_ERROR,
+  FORGOT_PASSWORD_ERROR, FORGOT_PASSWORD_PENDING,
   FORGOT_PASSWORD_REQUEST,
-  FORGOT_PASSWORD_SUCCESS,
   GET_USER_ERROR,
   GET_USER_REQUEST,
   GET_USER_SUCCESS,
@@ -18,7 +17,7 @@ import {
   RESET_USER_PASSWORD_SUCCESS,
   SIGN_UP_USER_ERROR,
   SIGN_UP_USER_PENDING,
-  SIGN_UP_USER_REQUEST
+  SIGN_UP_USER_REQUEST, USER_PROFILE_UPDATE
 } from './userActionTypes';
 import { put, call } from '@redux-saga/core/effects';
 import { CLIENTS, LOGIN } from '../../../constants/routes';
@@ -28,14 +27,16 @@ import { delay } from '../../../helpers/delay';
 
 export function * login (action) {
   try {
-    const { history, fields } = action.payload;
+    const { data, history } = action.payload;
     yield put({ type: LOGIN_USER_REQUEST });
-    const response = yield UserService.authUserService(fields);
+    const response = yield UserService.authUserService(data);
+    console.log(response);
     if (response) {
+      console.log(response.user);
       yield call(delay);
-      yield put({ type: LOGIN_USER_SUCCESS, payload: response.user });
       StorageService.setItem('acc', response.accessToken);
       StorageService.setItem('rfr', response.refreshToken);
+      yield put({ type: LOGIN_USER_SUCCESS, payload: response.user });
       history.push(CLIENTS);
     } else {
       alert('User not find');
@@ -52,7 +53,7 @@ export function * forgotPassword (action) {
     const response = yield UserService.restorePassword(action.payload);
     if (response) {
       yield call(delay);
-      yield put({ type: FORGOT_PASSWORD_SUCCESS });
+      yield put({ type: FORGOT_PASSWORD_PENDING });
     } else {
       yield put({ type: FORGOT_PASSWORD_ERROR });
     }
@@ -63,9 +64,9 @@ export function * forgotPassword (action) {
 
 export function * resetUserPassword (action) {
   try {
-    const { history } = action.payload;
+    const { fields, history } = action.payload;
     yield put({ type: RESET_USER_PASSWORD_REQUEST });
-    const response = yield UserService.resetPassword(action.payload);
+    const response = yield UserService.resetPassword(fields);
     if (response) {
       yield call(delay);
       yield put({ type: RESET_USER_PASSWORD_SUCCESS });
@@ -129,12 +130,27 @@ export function * getUser () {
     yield put({ type: GET_USER_REQUEST });
     const response = yield UserService.getUserService();
     if (response) {
+      yield call(delay);
       yield put({ type: GET_USER_SUCCESS, payload: response });
     } else {
       yield put({ type: GET_USER_ERROR });
     }
   } catch (e) {
     yield put({ type: GET_USER_ERROR });
+  }
+}
+
+export function * userProfileUpdate (action) {
+  try {
+    yield put({ type: USER_PROFILE_UPDATE.REQUEST });
+    const response = UserService.userProfileUpdate(action.payload);
+    if (response) {
+      yield put({ type: USER_PROFILE_UPDATE.SUCCESS });
+    } else {
+      yield put({ type: USER_PROFILE_UPDATE.ERROR });
+    }
+  } catch (e) {
+    yield put({ type: USER_PROFILE_UPDATE.ERROR });
   }
 }
 

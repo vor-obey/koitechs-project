@@ -7,6 +7,6 @@ export class ClientService {
 
   static setClient (client) {
     return (
-      [...users, client]);
+      [{ ...client, id: users.length + 1 }, ...users]);
   }
 }

@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -7,93 +6,144 @@ import { login } from '../../data/store/user/userActions';
 import './style.scss';
 import { NavLink as Nav, useHistory } from 'react-router-dom';
 import { FORGOT_PASSWORD, SIGN_UP } from '../../constants/routes';
-import { Form, Formik, Field, ErrorMessage } from 'formik';
-import { loginValidation } from '../../helpers/validation';
-import MainButton from '../MainButton';
+import { Form, Input, Button, Row, Typography } from 'antd';
 import Loading from '../Loading';
+import Logo from './Logo Quant.jpg';
 
-const style = { color: 'red', position: 'absolute', top: 65, fontSize: 14};
+const { Text, Title } = Typography;
 
 const LoginForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const [activeBtn, isActiveBtn] = useState('Email');
+  const [remember, setRemember] = useState(false);
+  // const [activeBtn, isActiveBtn] = useState('Email');
   const isLoading = useSelector(state => state.userReducer.isLoading);
 
-
-  const setButtonValue = () => {
-    if(activeBtn === 'Email') {
-      isActiveBtn('BankID');
-    } else {
-      isActiveBtn('Email')
+  const emailRules = [
+    {
+      required: true,
+      type: 'email',
+      message:
+         'Enter a valid email address!'
     }
-  }
+  ];
 
-  const buttonStyle = activeBtn === 'Email' ? 'switcher active' : 'switcher';
+  const passwordRules = [
+    {
+      required: true,
+      message: 'Please input your password!'
+    },
+    {
+      min: 8,
+      message: 'Your password must be at least 8 characters.'
+    }
+  ];
+  //
+  // const setButtonValue = () => {
+  //   if (activeBtn === 'Email') {
+  //     isActiveBtn('BankID');
+  //   } else {
+  //     isActiveBtn('Email');
+  //   }
+  // };
+  // const buttonStyle = activeBtn === 'Email' ? 'switcher active' : 'switcher';
 
-  const handleClick = useCallback((e) => {
-    e.preventDefault();
-    history.push(FORGOT_PASSWORD);
-  }, [history]);
+  const handleCheckbox = useCallback((e) => {
+    setRemember(e.target.checked);
+  }, [setRemember]);
 
   const onSubmit = useCallback((fields) => {
-    dispatch(login({ fields, history }));
-  }, [history]);
+    const data = { ...fields, remember };
+    dispatch(login({ data, history }));
+  }, [history, dispatch]);
+
+  const [form] = Form.useForm();
+  const [, forceUpdate] = useState({});
+
+  // To disable submit button at the beginning.
+  useEffect(() => {
+    forceUpdate({});
+  }, []);
 
   return (
     <Loading loading={isLoading}>
-      <Formik initialValues={{ email: '', password: '', remember: false }} onSubmit={(fields) => onSubmit(fields)} validationSchema={loginValidation}>
-        <Form className='sign-in-container'>
-          <div className='input-container'>
-            <div className='radio-bth'>
-              <label htmlFor="method-bankId" onClick={setButtonValue}>BankId</label>
-              <input type="radio" name='method' id='method-bankId' value='bankId'/>
-
-              <label htmlFor="method-email" onClick={setButtonValue}>Email</label>
-              <input type="radio" name='method' id='method-email' value='email'/>
-              <div className={buttonStyle}>{activeBtn}</div>
+        <Row className='log-in-form'>
+          <Form form={form} name="horizontal_login" layout="vertical" onFinish={onSubmit} className='sign-in-container'>
+            <div className='sign-in-content'>
+              <img src={Logo} alt=""/>
+              <Row>
+                <Text className='login-title'>Welcome to Quant</Text>
+              </Row>
+              <Row>
+                <Text className='login-subtitle'>Logga in</Text>
+              </Row>
+              <Form.Item
+                label='Email'
+                name="email"
+                rules={emailRules}
+              >
+                <Input placeholder="Email" />
+              </Form.Item>
+              <Form.Item
+                label='Password'
+                name="password"
+                rules={passwordRules}
+              >
+                <Input
+                  type="password"
+                  placeholder="Password"
+                />
+              </Form.Item>
+              <Form.Item>
+                <Row className='forgot-password'>
+                  <Row className='checkbox-forgot'>
+                    <input type='checkbox' name='remember' id='remember' onChange={handleCheckbox} />
+                    <label htmlFor='remember'>Remember me</label>
+                  </Row>
+                  <Nav className="login-form-forgot" to={FORGOT_PASSWORD}>
+                    Forgot password
+                  </Nav>
+                </Row>
+              </Form.Item>
+              <Form.Item shouldUpdate>
+                {() => (
+                  <Button
+                    type="default"
+                    htmlType="submit"
+                    disabled={
+                      !form.isFieldsTouched(true) ||
+                      !!form.getFieldsError().filter(({ errors }) => errors.length).length
+                    }
+                  >
+                    Log in
+                  </Button>
+                )}
+              </Form.Item>
             </div>
-            <div className='sign-in-block'>
-              <label htmlFor="email">Email</label>
-              <Field id="email" type="email" name="email"/>
-              <ErrorMessage
-                name='email'
-                component='div'
-                style={style}
-              />
-            </div>
-
-            <div className='sign-in-block'>
-              <label htmlFor="password">Password</label>
-              <Field id="password" type="password" name="password"/>
-              <ErrorMessage
-                name='password'
-                component='div'
-                style={style}
-              />
-            </div>
-          </div>
-
-          <div className='checkbox-container'>
-            <div className='checkbox-forgotpassword'>
-              <Field type='checkbox' name='remember' id='remember' />
-              <label htmlFor='remember'>Remember my email</label>
-            </div>
-
-            <a onClick={handleClick}>Forgot password?</a>
-          </div>
-
-          <MainButton disabled type="submit">Send</MainButton>
-          <div>
-            <p>
+            <Row className='create-account-text'>
               Never give out your login credentials and never
-              log in at the request of someone who contacts you.
-            </p>
-            <p>Do you not have an account?</p>
-            <Nav to={SIGN_UP}>Create an account</Nav>
-          </div>
-        </Form>
-      </Formik>
+              log in at the request of someone who contacts you
+              <Nav to={SIGN_UP}>Register now!</Nav>
+            </Row>
+          </Form>
+        </Row>
+        <Row className='log-in-text'>
+          <Title>Quia voluptas sit?</Title>
+          Sed ut perspiciatis unde omnis iste natus error sit
+          voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et
+          quasi architecto beatae vitae dicta sunt explicabo. Nemo
+          enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+          aut fugit, sed quia consequuntur magni dolores eos qui ratione
+          voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+          ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
+          non numquam eius modi tempora incidunt ut labore et dolore magnam
+          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+          exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
+          ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui
+          in ea voluptate velit esse quam nihil molestiae consequatur, vel
+          illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        </Row>
     </Loading>
   );
 };

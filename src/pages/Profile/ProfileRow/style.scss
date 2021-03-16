@@ -1,0 +1,40 @@
+.profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  border-bottom: 2px solid lightgrey;
+  transition: .3s;
+  padding: 5px 10px;
+  .input-block {
+    display: flex;
+    align-items: center;
+  }
+  .row-title {
+    margin-right: 20px;
+    height: fit-content;
+  }
+  input {
+    height: fit-content;
+    width: 300px;
+  }
+  .profile-row-value {
+    width: fit-content;
+  }
+}
+
+.profile-row:hover {
+  background-color: #efefef;
+  transition: .3s;
+}
+
+.password-inputs {
+  width: fit-content;
+  justify-content: space-between;
+  input {
+    width: 150px;
+  }
+  input+input {
+    margin-left: 15px;
+  }
+}

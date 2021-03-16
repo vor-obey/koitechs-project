@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import './style.scss';
 import { useDispatch } from 'react-redux';
 import { clearConfirmStep } from '../../../data/store/user/userActions';
-import { LOGIN, RESET_PASSWORD } from '../../../constants/routes';
+import { LOGIN } from '../../../constants/routes';
 import BackToSignUp from '../../BackToSignUp';
 import MainButton from '../../MainButton';
+import { SIMULATE_CLICK_ON_LINK } from '../../../data/store/user/userActionTypes';
+import { useHistory } from 'react-router';
 
-const ForgotPasswordConfirmation = ({ history }) => {
+const ForgotPasswordConfirmation = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = useCallback((e) => {
     e.preventDefault();
@@ -20,8 +23,8 @@ const ForgotPasswordConfirmation = ({ history }) => {
   });
 
   const onSimulate = useCallback(() => {
-    history.push(RESET_PASSWORD);
-  }, [history]);
+    dispatch({ type: SIMULATE_CLICK_ON_LINK });
+  }, [dispatch]);
 
   return (
     <>
@@ -40,7 +43,7 @@ const ForgotPasswordConfirmation = ({ history }) => {
         <a onClick={handleClick}>Back to the login</a>
       </div>
       <BackToSignUp />
-      <MainButton disabled onClick={onSimulate}>Simulate send message</MainButton>
+      <MainButton onClick={onSimulate}>Simulate send message</MainButton>
     </>
   );
 };

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 const MainButton = ({ type, disabled, onClick, children }) => {
-  const className = disabled ? 'main-button' : 'main-button disabled';
+  const className = disabled ? 'main-button disabled' : 'main-button';
   return (
-    <button disabled={!disabled} className={className} type={type} onClick={onClick}>
+    <button disabled={disabled} className={className} type={type} onClick={onClick}>
       {children}
     </button>
   );

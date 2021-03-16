@@ -5,7 +5,7 @@ import {
   CONFIRM_AUTH_ERROR,
   CONFIRM_AUTH_REQUEST,
   CONFIRM_AUTH_SUCCESS,
-  FORGOT_PASSWORD_ERROR,
+  FORGOT_PASSWORD_ERROR, FORGOT_PASSWORD_PENDING,
   FORGOT_PASSWORD_REQUEST,
   FORGOT_PASSWORD_SUCCESS,
   GET_USER_ERROR,
@@ -21,16 +21,18 @@ import {
   SIGN_UP_USER_ERROR,
   SIGN_UP_USER_PENDING,
   SIGN_UP_USER_REQUEST,
-  SIGN_UP_USER_SUCCESS
+  SIGN_UP_USER_SUCCESS, SIMULATE_CLICK_ON_LINK, USER_PROFILE_UPDATE
 } from './userActionTypes';
-import { CHANGE_EMAIL, PENDING, SUCCESS } from '../../../constants/authStatus';
+import { CHANGE_EMAIL, CONFIRMATION, PENDING, SUCCESS } from '../../../constants/authStatus';
 
 const initialState = {
   token: '',
   user: null,
   isLoading: false,
   isError: false,
-  confirmStep: false,
+  forgotPassword: {
+    status: ''
+  },
   auth: {
     status: ''
   }
@@ -47,10 +49,8 @@ export const userReducer = (state = initialState, action) => {
     case LOGIN_USER_SUCCESS:
       return {
         ...state,
-        isAuthorized: true,
         isLoading: false,
-        user: action.payload,
-        isAuth: true
+        user: action.payload
       };
 
     case LOGIN_USER_ERROR:
@@ -60,17 +60,36 @@ export const userReducer = (state = initialState, action) => {
         isLoading: false
       };
 
+    case SIMULATE_CLICK_ON_LINK:
+      return {
+        ...state,
+        forgotPassword: {
+          status: CONFIRMATION
+        }
+      };
+
     case FORGOT_PASSWORD_REQUEST:
       return {
         ...state,
         isLoading: true
       };
 
+    case FORGOT_PASSWORD_PENDING:
+      return {
+        ...state,
+        isLoading: false,
+        forgotPassword: {
+          status: PENDING
+        }
+      };
+
     case FORGOT_PASSWORD_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        confirmStep: true
+        forgotPassword: {
+          status: ''
+        }
       };
 
     case FORGOT_PASSWORD_ERROR:
@@ -95,7 +114,10 @@ export const userReducer = (state = initialState, action) => {
     case RESET_USER_PASSWORD_SUCCESS:
       return {
         ...state,
-        isLoading: false
+        isLoading: false,
+        forgotPassword: {
+          status: ''
+        }
       };
 
     case RESET_USER_PASSWORD_ERROR:
@@ -185,35 +207,21 @@ export const userReducer = (state = initialState, action) => {
         }
       };
 
-    case LOG_OUT:
-      return {
-        token: '',
-        user: null,
-        isLoading: false,
-        isError: false,
-        confirmStep: false,
-        auth: {
-          status: ''
-        }
-      };
-
-    case GO_TO_CHANGE_EMAIL: {
+    case GO_TO_CHANGE_EMAIL:
       return {
         ...state,
         auth: {
           status: CHANGE_EMAIL
         }
       };
-    }
 
-    case CHANGE_EMAIL_REQUEST: {
+    case CHANGE_EMAIL_REQUEST:
       return {
         ...state,
         isLoading: true
       };
-    }
 
-    case CHANGE_EMAIL_SUCCESS: {
+    case CHANGE_EMAIL_SUCCESS:
       return {
         ...state,
         isLoading: false,
@@ -221,15 +229,46 @@ export const userReducer = (state = initialState, action) => {
           status: PENDING
         }
       };
-    }
 
-    case CHANGE_EMAIL_ERROR: {
+    case CHANGE_EMAIL_ERROR:
       return {
         ...state,
         isError: true,
         isLoading: false
       };
-    }
+
+    case USER_PROFILE_UPDATE.REQUEST:
+      return {
+        ...state,
+        isLoading: true
+      };
+
+    case USER_PROFILE_UPDATE.SUCCESS:
+      return {
+        ...state,
+        isLoading: false
+      };
+
+    case USER_PROFILE_UPDATE.ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true
+      };
+
+    case LOG_OUT:
+      return {
+        token: '',
+        user: null,
+        isLoading: false,
+        isError: false,
+        forgotPassword: {
+          status: false
+        },
+        auth: {
+          status: ''
+        }
+      };
 
     default: {
       return state;

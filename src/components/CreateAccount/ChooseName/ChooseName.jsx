@@ -6,45 +6,38 @@ import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { createClient } from '../../../data/store/clients/clientActions';
-import { Form, Formik, Field, ErrorMessage } from 'formik';
-import { nameValidation } from '../../../helpers/validation';
 import MainButton from '../../MainButton';
+import { Form, Input } from 'antd';
 
-const style = { color: 'red', position: 'absolute', top: 70, fontSize: 14 };
-
-const ChooseName = ({ setClientData, clientData }) => {
+const ChooseName = ({ clientData }) => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const [form] = Form.useForm();
 
   const onSubmit = useCallback((fields) => {
     const data = { ...clientData, name: fields.name };
-    setClientData(data);
-    dispatch(createClient(clientData));
+    dispatch(createClient(data));
     history.push(CLIENTS);
-  }, [dispatch, history, clientData, setClientData]);
+  }, [dispatch, history, clientData]);
 
   return (
-    <Formik initialValues={{ name: '' }} onSubmit={(fields) => onSubmit(fields)} validationSchema={nameValidation}>
-      <Form className='chose-name-container' >
+    <Form form={form} name="horizontal_login" layout="vertical" onFinish={onSubmit} className='chose-name-container'>
         <h1>Create alias client account</h1>
         <div className='enter-name'>
-          <label htmlFor="name">Name</label>
-          <Field type="text" name='name' placeholder='name' />
-          <ErrorMessage
-            component='div'
-            style={style}
-            name='name'
-          />
-          <MainButton disabled type='submit'>Register</MainButton>
+          <Form.Item
+            label='Name'
+            name="name"
+          >
+            <Input placeholder="Name" />
+          </Form.Item>
+          <MainButton type='submit'>Register</MainButton>
         </div>
       </Form>
-    </Formik>
   );
 };
 
 export default ChooseName;
 
 ChooseName.propTypes = {
-  setClientData: PropTypes.func,
   clientData: PropTypes.object
 };

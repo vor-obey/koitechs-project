@@ -6,6 +6,7 @@ import {
   GET_USERS_REQUEST,
   GET_USERS_SUCCESS
 } from './clientActionsTypes';
+import { LOG_OUT } from '../user/userActionTypes';
 
 const initialState = {
   users: [],
@@ -53,6 +54,13 @@ export const clientReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: true
+      };
+
+    case LOG_OUT:
+      return {
+        users: [],
+        isLoading: false,
+        isError: false
       };
 
     default: {

@@ -23,7 +23,7 @@ const SignUpConfirmSuccess = () => {
         Thanks for applying for membership. As soon as your application has been reviewed and approved you will receive an email
         confirming your access status and grant or deny you access as a Client/Advisor
       </p>
-        <MainButton disabled onClick={goClientPage}>Go to home page</MainButton>
+        <MainButton onClick={goClientPage}>Go to home page</MainButton>
     </div>
   );
 };

@@ -29,7 +29,7 @@ const ChooseAccount = ({ setNextStep, setClientData, clientData }) => {
         <label htmlFor="complete">Complete account</label>
       </div>
 
-      <MainButton disabled type='submit'>Move on</MainButton>
+      <MainButton type='submit'>Move on</MainButton>
 
     </form>
   );
