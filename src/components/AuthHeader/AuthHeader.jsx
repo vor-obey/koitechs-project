@@ -4,6 +4,7 @@ import LogoType from './Logo Citroneer.jpg';
 import { Button, Menu, Layout } from 'antd';
 import { LOGIN } from '../../constants/routes';
 import { useHistory } from 'react-router';
+import { NavLink as Nav } from 'react-router-dom';
 
 const { Header } = Layout;
 
@@ -13,9 +14,9 @@ const AuthHeader = () => {
   return (
     <Header className='header-wrap'>
       <div className='vertical-line-header'/>
-      <div className='logotype' >
+      <Nav to={LOGIN} className='logotype' >
         <img src={LogoType} alt=""/>
-      </div>
+      </Nav>
       <Menu mode="horizontal" className='header-nav'>
         <Menu.Item key="1" disabled>Nyhetsrum </Menu.Item>
         <Menu.Item key="2" disabled>Om oss </Menu.Item>

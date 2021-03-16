@@ -29,10 +29,10 @@ const MainRouting = () => {
           <Switch>
             <PrivateRoute exact path={CLIENTS} component={Clients} />
             <PrivateRoute exact path={PROFILE} component={Profile} />
+            <PrivateRoute exact path={CREATE_ACCOUNT} component={CreateAccount} />
             <PrivateRoute exact path={CLIENTS_PROFILE} component={ClientsProfile} />
             <PrivateRoute exact path={INFORMATION} component={Information} />
             <PrivateRoute exact path={SUPPORT} component={Support} />
-            <PrivateRoute exact path={CREATE_ACCOUNT} component={CreateAccount} />
 
             <Redirect to={CLIENTS} />
           </Switch>

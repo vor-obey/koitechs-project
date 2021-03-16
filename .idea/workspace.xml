@@ -10,7 +10,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic" />
+    <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthHeader/AuthHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthHeader/AuthHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthHeader/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthHeader/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +108,7 @@
       <workItem from="1615467086708" duration="27998000" />
       <workItem from="1615625942116" duration="8547000" />
       <workItem from="1615640046463" duration="80278000" />
-      <workItem from="1615897270242" duration="11355000" />
+      <workItem from="1615897270242" duration="14124000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -221,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615909757842</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Refactor style Choose account component">
+      <created>1615910398037</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1615910398037</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +272,8 @@
     <MESSAGE value="Add user profile, design main page and login" />
     <MESSAGE value="Refactor styles Auth pages" />
     <MESSAGE value="Refactor style all components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor style all components" />
+    <MESSAGE value="Refactor style Choose account component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor style Choose account component" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -268,10 +284,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="709" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1615277448588" />
-    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1615895977836">
+    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1615910420762">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1615895977836" />
+    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1615910420762" />
     <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1615899732012">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -296,10 +312,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615897162402" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615909761886">
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615910407959">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615909761886" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615910407959" />
     <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615466618793">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>

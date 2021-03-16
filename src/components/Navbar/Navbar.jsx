@@ -20,9 +20,9 @@ const Navbar = () => {
 
   return (
     <Header className='header-wrap' style={{ position: 'sticky' }}>
-      <div className='logotype' >
+      <Nav to={CLIENTS} className='logotype' >
         <img src={LogoType} alt=""/>
-      </div>
+      </Nav>
       <Menu mode="horizontal" defaultSelectedKeys={['1']} className='header-nav'>
         <Menu.Item key="1"><Nav to={CLIENTS}>Clients</Nav></Menu.Item>
         <Menu.Item key="2" disabled><Nav to={INFORMATION}>Information</Nav></Menu.Item>

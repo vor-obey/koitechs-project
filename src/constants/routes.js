@@ -5,7 +5,7 @@ export const FORGOT_PASSWORD = '/forgot-password';
 
 export const CLIENTS = '/clients';
 export const CLIENTS_PROFILE = '/clients/:id';
-export const PROFILE = '/clients/profile';
+export const PROFILE = '/profile';
 export const INFORMATION = '/information';
 export const SUPPORT = '/support';
 

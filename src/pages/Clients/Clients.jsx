@@ -1,10 +1,10 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useEffect } from 'react';
 import { useHistory } from 'react-router';
 
 import './style.scss';
 import { CREATE_ACCOUNT } from '../../constants/routes';
-import { useSelector } from 'react-redux';
-// import { getUsers } from '../../data/store/clients/clientActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUsers } from '../../data/store/clients/clientActions';
 import MainButton from '../../components/MainButton';
 import { Select } from 'antd';
 
@@ -12,16 +12,18 @@ const { Option } = Select;
 
 const Clients = () => {
   const history = useHistory();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const clients = useSelector(state => state.clientReducer.users);
 
   const onCreateAccount = useCallback(() => {
     history.push(CREATE_ACCOUNT);
   }, []);
 
-  // useEffect(() => {
-  //   dispatch(getUsers());
-  // }, [dispatch]);
+  useEffect(() => {
+    if (clients.length === 0) {
+      dispatch(getUsers());
+    }
+  }, [dispatch, clients]);
 
   function onChange (value, data) {
     history.push(`/clients/${data.id}`);
@@ -40,8 +42,6 @@ const Clients = () => {
   }
 
   const renderOptions = useMemo(() => clients.map(user => <Option key={user.id} value={user.name} id={user.id}>{user.name}</Option>), [clients]);
-
-  console.log(renderOptions);
 
   return (
     <div className='clients-container'>
