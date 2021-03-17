@@ -1,6 +1,6 @@
 .support-container ul li {
     list-style: none;
-    padding: 0;
+    padding: 5px 0;
 }
 
 .support-container ul {
@@ -14,6 +14,12 @@
 }
 
 .support-container {
+    position: fixed;
+    top: 150px;
+    left: 50px;
     height: 100%;
     width: 100%;
+    .fields-names {
+        font-weight: bold;
+    }
 }

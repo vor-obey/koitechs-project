@@ -12,12 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5de7ccea-01d8-45d5-8215-f077ca8731fb" name="Default Changelist" comment="Refactor logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthHeader/AuthHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthHeader/AuthHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthHeader/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthHeader/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Routing/MainRouting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Clients/Clients.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainFooter/MainFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainFooter/MainFooter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainFooter/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainFooter/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ClientsProfile/ClientsProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ClientsProfile/ClientsProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Support/Support.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Support/Support.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Support/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Support/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,19 +74,6 @@
       <recent name="$PROJECT_DIR$/src/components/LoginForm" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -108,7 +94,8 @@
       <workItem from="1615467086708" duration="27998000" />
       <workItem from="1615625942116" duration="8547000" />
       <workItem from="1615640046463" duration="80278000" />
-      <workItem from="1615897270242" duration="14124000" />
+      <workItem from="1615897270242" duration="14446000" />
+      <workItem from="1615972584619" duration="1753000" />
     </task>
     <task id="LOCAL-00001" summary="Create Login and Forgot Password forms">
       <created>1614787152943</created>
@@ -236,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615910398037</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Refactor logic create account">
+      <created>1615923982897</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1615923982897</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +267,8 @@
     <MESSAGE value="Refactor styles Auth pages" />
     <MESSAGE value="Refactor style all components" />
     <MESSAGE value="Refactor style Choose account component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor style Choose account component" />
+    <MESSAGE value="Refactor logic create account" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor logic create account" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="413" key="#ESLint" timestamp="1615273022644">
@@ -308,14 +303,14 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="596" y="277" key="MultipleFileMergeDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1615466936955" />
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615897162402">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor" timestamp="1615972639899">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615897162402" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615910407959">
+    <state x="417" y="172" width="1280" height="729" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1615972639899" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1615923987515">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615910407959" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1615923987515" />
     <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615466618793">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
